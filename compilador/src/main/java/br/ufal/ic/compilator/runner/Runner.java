@@ -1,10 +1,10 @@
-package br.ufal.ic.compiladores.compilador;
+package br.ufal.ic.compilator.runner;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class Runner 
 {
     public static void main( String[] args )
     {
