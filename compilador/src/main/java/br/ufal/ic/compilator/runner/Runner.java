@@ -13,8 +13,15 @@ public class Runner {
 	private static ArrayList<String> arquivo = new ArrayList<String>();
 
 	public static void main(String[] args) throws IOException{
+		
 		TokenService.fillExpressoes();
 
+		arquivoBuild(args);
+		
+		getNextToken();
+	}
+
+	private static void arquivoBuild(String[] args) {
 		if (args.length > 0) {
 			File file = new File(args[0]);
 			BufferedReader reader = null;
@@ -40,12 +47,9 @@ public class Runner {
 			System.out.println("Nenhum arquivo passado.");
 		}
 
-		getNextToken();
-		getNextToken();
-		getNextToken();
 	}
-
-	public static void getNextToken() {
+	
+	private static void getNextToken() {
 
 		System.out.println(Token.nextToken().toString());			
 		
