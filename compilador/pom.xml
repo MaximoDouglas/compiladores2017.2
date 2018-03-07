@@ -32,7 +32,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>br.ufal.ic.compiladores.Runner</mainClass>
+							<mainClass>br.ufal.ic.compilator.runner.Runner</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
