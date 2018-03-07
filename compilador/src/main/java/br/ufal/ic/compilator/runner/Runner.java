@@ -41,6 +41,7 @@ public class Runner {
 		}
 
 		getNextToken();
+		getNextToken();
 	}
 
 	public static void getNextToken() {

@@ -20,7 +20,7 @@ public class Token {
 
 	private String lexema;
 
-	private Token(int positionX, String lexema) {
+	private Token(int positionX) {
 		this.positionX = positionX;
 		this.lexema = lexema;
 	}
@@ -31,14 +31,31 @@ public class Token {
 		if (stopPositionX >= linha.length()) {
 			stopPositionY++;
 			linha = Runner.getNextLine(stopPositionY);
+			stopPositionX = 0;
 		}
-
-		Token tk = regexChecker("[{]", linha.substring(stopPositionX));
-		tk.categorie = Categories.AB_CHAVE;
-		tk.categorieNumber = tk.categorie.ordinal();
-		tk.positionY = stopPositionY;
 		
-		return tk;
+		int initialPositionX = stopPositionX;
+		Token firstTk = new Token(linha.length());
+		
+		
+		for (int i = 0; i < TokenService.getExpressoes().size(); i++) {
+			Token tk = regexChecker(TokenService.getExpressoes().get(i), linha.substring(stopPositionX));
+			
+			if (tk != null) {
+				tk.categorie = Categories.values()[i];
+				tk.categorieNumber = tk.categorie.ordinal();
+				tk.positionY = stopPositionY;
+				
+				if (tk.positionX < firstTk.positionX) {
+					firstTk = tk;
+					initialPositionX = stopPositionX;
+					stopPositionX = 0;
+				}	
+			}
+		}
+		
+		stopPositionX = initialPositionX;
+		return firstTk;
 	}
 
 	private static Token regexChecker(String theRegex, String theString) {
@@ -52,7 +69,8 @@ public class Token {
 			lexema = regexMatcher.group();
 			posX = regexMatcher.start();
 			stopPositionX = regexMatcher.end() + 1;
-			Token tk = new Token(posX, lexema);
+			Token tk = new Token(posX);
+			tk.lexema = lexema;
 			return tk;
 		}
 

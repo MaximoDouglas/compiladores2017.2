@@ -3,19 +3,57 @@ package br.ufal.ic.compilator.model;
 import java.util.ArrayList;
 
 public class TokenService {
-	private static ArrayList<String> expressoes = new ArrayList<String>();
+	private static ArrayList<String> expressoes = new ArrayList();
 	
 	public static void fillExpressoes () {
 		
-		for (int i = 0; i < Categories.values().length; i++) {
-			expressoes.add("-");
-		}
-		
-		expressoes.add(Categories.MAIN.ordinal(), "main");
-		expressoes.add(Categories.AB_CHAVE.ordinal(), "[{]");
-		expressoes.add(Categories.AB_COLCHET.ordinal(), "[[]");
-		expressoes.add(Categories.AB_PARENTE.ordinal(), "[(]");
-		expressoes.add(Categories.TIPO_VOID.ordinal(), "void");
+		expressoes.add("main".toString());
+		expressoes.add("[;]".toString());
+		expressoes.add("[,]".toString());
+		expressoes.add("[(]".toString());
+		expressoes.add("[)]".toString());
+		expressoes.add("[{]".toString());
+		expressoes.add("[}]".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("[=]".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("-".toString());
+		expressoes.add("int".toString());
+		expressoes.add("float".toString());
+		expressoes.add("boolean".toString());
+		expressoes.add("char".toString());
+		expressoes.add("void".toString());
+		expressoes.add("[+]".toString());
+		expressoes.add("[-]".toString());
+		expressoes.add("[*]".toString());
+		expressoes.add("[/]".toString());
+		expressoes.add("==".toString());
+		expressoes.add("!=".toString());
+		expressoes.add("[<]".toString());
+		expressoes.add("<=".toString());
+		expressoes.add("[>]".toString());
+		expressoes.add(">=".toString());
+		expressoes.add("-".toString());
+		expressoes.add("[&]".toString());
+		expressoes.add("[!]".toString());
+		expressoes.add("-".toString());
+		expressoes.add("return".toString());
+		expressoes.add("if".toString());
+		expressoes.add("else".toString());
+		expressoes.add("for".toString());
+		expressoes.add("while".toString());
+		expressoes.add("read".toString());
+		expressoes.add("print".toString());
+		expressoes.add("println".toString());
+		expressoes.add("-".toString());
 	}
 	
 	public static ArrayList<String> getExpressoes(){
