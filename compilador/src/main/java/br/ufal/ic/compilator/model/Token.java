@@ -27,10 +27,12 @@ public class Token {
 	public static Token nextToken() {
 		String linha = Runner.getNextLine(stopPositionY);
 
-		if (stopPositionX >= linha.length()) {
+		if (stopPositionX >= linha.length() && stopPositionY < Runner.getLines() - 1) {
 			stopPositionY++;
 			linha = Runner.getNextLine(stopPositionY);
 			stopPositionX = 0;
+		} else if (stopPositionX >= linha.length() && stopPositionY == Runner.getLines() - 1) {
+			return null;
 		}
 		
 		int initialPositionX = stopPositionX;
@@ -56,7 +58,6 @@ public class Token {
 		}
 		
 		stopPositionX = finalPositionX;
-		System.out.println(stopPositionX);
 		return firstTk;
 	}
 
@@ -74,7 +75,7 @@ public class Token {
 			Token tk = new Token(posX);
 			tk.lexema = lexema;
 			
-			stopPositionX = posX + regexMatcher.end();
+			stopPositionX = stopPositionX + regexMatcher.end();
 			return tk;
 		}
 

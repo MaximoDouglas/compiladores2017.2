@@ -13,11 +13,11 @@ public class Runner {
 	private static ArrayList<String> arquivo = new ArrayList<String>();
 
 	public static void main(String[] args) throws IOException{
-		
+
 		TokenService.fillExpressoes();
 
 		arquivoBuild(args);
-		
+
 		getNextToken();
 	}
 
@@ -48,15 +48,21 @@ public class Runner {
 		}
 
 	}
-	
-	private static void getNextToken() {
 
-		System.out.println(Token.nextToken().toString());			
-		
+	private static void getNextToken() {
+		Token tk = Token.nextToken();
+		while(tk != null) {
+			System.out.println(tk.toString());
+			tk = Token.nextToken();
+		}
 	}
 
 	public static String getNextLine(int index) {
 		return arquivo.get(index);
+	}
+
+	public static int getLines() {
+		return arquivo.size();
 	}
 
 }
