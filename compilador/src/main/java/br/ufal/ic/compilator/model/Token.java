@@ -26,12 +26,17 @@ public class Token {
 
 	public static Token nextToken() {
 		String linha = Runner.getNextLine(stopPositionY);
-
-		if (stopPositionX >= linha.length() && stopPositionY < Runner.getLines() - 1) {
+		linha = linha.trim();
+		
+		
+		while((linha.trim().equals("") || stopPositionX >= linha.length()) && stopPositionY < Runner.getLines() - 1)	 {
 			stopPositionY++;
 			linha = Runner.getNextLine(stopPositionY);
 			stopPositionX = 0;
-		} else if (stopPositionX >= linha.length() && stopPositionY == Runner.getLines() - 1) {
+			System.out.println("---------------------------------------------"); //pra ficar mais claro os tokens por linha
+		}	
+		
+		if (stopPositionX >= linha.length() && stopPositionY == Runner.getLines() - 1) {
 			return null;
 		}
 		

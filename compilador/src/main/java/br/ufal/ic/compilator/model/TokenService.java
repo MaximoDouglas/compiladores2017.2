@@ -6,6 +6,7 @@ public class TokenService {
 	private static ArrayList<String> expressoes = new ArrayList();
 	
 	public static void fillExpressoes () {
+		// | 
 		
 		expressoes.add("main"); //MAIN
 		expressoes.add("[;]"); //PONT_VIRG
@@ -14,28 +15,29 @@ public class TokenService {
 		expressoes.add("[)]"); //FE_PARENTE
 		expressoes.add("[{]"); //AB_CHAVE
 		expressoes.add("[}]"); //FE_CHAVE
-		expressoes.add("-"); //AB_COLCHET
-		expressoes.add("-"); //FE_COLCHET
-		expressoes.add("-"); //ID
+		expressoes.add("[x]"); //ID               EM FALTA
+		expressoes.add("=="); //OPR_IGUAL
 		expressoes.add("[=]"); //ATRIBUICAO
-		expressoes.add("-"); //CTE_INT
-		expressoes.add("-"); //CTE_FLOAT
-		expressoes.add("-"); //CTE_BOOL
-		expressoes.add("-"); //CTE_CHAR
-		expressoes.add("-"); //CTE_CAD_IN
-		expressoes.add("-"); //CTE_CAD_FL
-		expressoes.add("-"); //CTE_CAD_BO
-		expressoes.add("\"[^\\r\\n]*\"|\\['[^\\\\r\\\\n]'[, '[^\\\\r\\\\n]']*\\]"); //CTE_CAD_CH
+		expressoes.add("(\"[^\\r\\n]*\")|(\\['\\w'([,]'\\w')*\\])"); //CTE_CAD_CH
+		expressoes.add("'\\w'"); //CTE_CHAR
+		expressoes.add("\\[((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+)(,((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+))*\\]"); //CTE_CAD_FL   consertar!!!!
+		expressoes.add("((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+)"); //CTE_FLOAT
+		expressoes.add("\\[(\\-)?\\d+(,(\\-)?\\d+)*\\]"); //CTE_CAD_IN
+		expressoes.add("(\\-)?\\d+"); //CTE_INT
+		expressoes.add("\\[(true|false)(,(true|false))*\\]"); //CTE_CAD_BO
+		expressoes.add("true|false"); //CTE_BOOL
+		expressoes.add("\\["); //AB_COLCHET
+		expressoes.add("\\]"); //FE_COLCHET
 		expressoes.add("int"); //TIPO_INT
 		expressoes.add("float"); //TIPO_FLOAT
 		expressoes.add("boolean"); //TIPO_BOOL
 		expressoes.add("char"); //TIPO_CHAR
 		expressoes.add("void"); //TIPO_VOID
+		expressoes.add("\\+\\+"); //OP_CONC
 		expressoes.add("[+]"); //OPA_AD
-		expressoes.add("[-]"); //OPA_SUB
+		expressoes.add("$-$"); //OPA_SUB
 		expressoes.add("[*]"); //OPA_MULT
-		expressoes.add("-"); //OPA_DIV
-		expressoes.add("=="); //OPR_IGUAL
+		expressoes.add("\\/"); //OPA_DIV
 		expressoes.add("!="); //OPR_DIF
 		expressoes.add("[<]"); //OPR_MEN
 		expressoes.add("<="); //OPR_MEN_IG
@@ -44,7 +46,6 @@ public class TokenService {
 		expressoes.add("\\|"); //OPL_OU
 		expressoes.add("[&]"); //OPL_E
 		expressoes.add("[!]"); //OPL_NAO
-		expressoes.add("-"); //OP_CONC
 		expressoes.add("return"); //RETORNO
 		expressoes.add("if"); //SE
 		expressoes.add("else"); //SENAO
