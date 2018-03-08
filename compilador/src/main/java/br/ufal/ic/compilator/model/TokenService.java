@@ -25,7 +25,7 @@ public class TokenService {
 		expressoes.add("-"); //CTE_CAD_IN
 		expressoes.add("-"); //CTE_CAD_FL
 		expressoes.add("-"); //CTE_CAD_BO
-		expressoes.add("\"[^\\r\\n]*\""); //CTE_CAD_CH
+		expressoes.add("\"[^\\r\\n]*\"|\\['[^\\\\r\\\\n]'[, '[^\\\\r\\\\n]']*\\]"); //CTE_CAD_CH
 		expressoes.add("int"); //TIPO_INT
 		expressoes.add("float"); //TIPO_FLOAT
 		expressoes.add("boolean"); //TIPO_BOOL
