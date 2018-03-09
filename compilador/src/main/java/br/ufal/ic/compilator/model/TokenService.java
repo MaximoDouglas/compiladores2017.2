@@ -6,16 +6,16 @@ import java.util.Map;
 public class TokenService {
 
 	private static Map<Categories, String> expressoesECategorias = new HashMap<Categories, String>();
+	private static Map<String, Categories> reservedWords = new HashMap<String, Categories>();
 
 	public static void fillExpressoes () {
-		expressoesECategorias.put(Categories.MAIN, "main"); //MAIN
+		expressoesECategorias.put(Categories.MAIN, "main");
 		expressoesECategorias.put(Categories.PONT_VIRG, "[;]"); 
 		expressoesECategorias.put(Categories.VIRGULA, "[,]"); 
 		expressoesECategorias.put(Categories.AB_PARENTE, "[(]"); 
 		expressoesECategorias.put(Categories.FE_PARENTE, "[)]");
 		expressoesECategorias.put(Categories.AB_CHAVE, "[{]"); 
 		expressoesECategorias.put(Categories.FE_CHAVE, "[}]"); 
-		expressoesECategorias.put(Categories.ID, "[x]");	//EM FALTA
 		expressoesECategorias.put(Categories.OPR_IGUAL, "==");
 		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]"); 
 		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"[^\\r\\n]*\")|(\\['\\w'([,]'\\w')*\\])"); 
@@ -54,10 +54,32 @@ public class TokenService {
 		expressoesECategorias.put(Categories.WHILE, "while"); 
 		expressoesECategorias.put(Categories.ENTRADA, "read"); 
 		expressoesECategorias.put(Categories.SAIDA, "print"); 
-		expressoesECategorias.put(Categories.SAIDA_LN, "println"); 
+		expressoesECategorias.put(Categories.SAIDA_LN, "println");
+		expressoesECategorias.put(Categories.ID, "[a-zA-Z_][a-zA-Z0-9_]{0,30}");
+
+		reservedWords.put("main", Categories.MAIN);
+		reservedWords.put("true", Categories.CTE_BOOL);
+		reservedWords.put("false", Categories.CTE_BOOL);
+		reservedWords.put("int", Categories.TIPO_INT); 
+		reservedWords.put("float", Categories.TIPO_FLOAT ); 
+		reservedWords.put("boolean", Categories.TIPO_BOOL ); 
+		reservedWords.put("char", Categories.TIPO_CHAR ); 
+		reservedWords.put("void", Categories.TIPO_VOID );
+		reservedWords.put("return", Categories.RETORNO );
+		reservedWords.put("else", Categories.SENAO ); 
+		reservedWords.put("for", Categories.FOR); 
+		reservedWords.put("while", Categories.WHILE ); 
+		reservedWords.put("read", Categories.ENTRADA ); 
+		reservedWords.put("print", Categories.SAIDA ); 
+		reservedWords.put("println", Categories.SAIDA_LN );
+		reservedWords.put("if", Categories.SE);
 	}
 
 	public static Map<Categories, String> getExpressoes(){
 		return expressoesECategorias;
+	}
+	
+	public static Map<String, Categories> getReserved(){
+		return reservedWords;
 	}
 }

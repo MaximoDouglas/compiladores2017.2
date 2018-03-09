@@ -22,43 +22,49 @@ public class Token {
 	}
 
 	public static Token nextToken() {
-		
+
 		String linha = Runner.getNextLine(stopPositionY);
 		linha = linha.trim();
-		
+
 		while((linha.trim().equals("") || stopPositionX >= linha.length()) && stopPositionY < Runner.getLines() - 1)	 {
 			stopPositionY++;
 			linha = Runner.getNextLine(stopPositionY);
 			stopPositionX = 0;
 			System.out.println("---------------------------------------------"); //pra ficar mais claro os tokens por linha
 		}	
-		
+
 		if (stopPositionX >= linha.length() && stopPositionY == Runner.getLines() - 1) {
 			return null;
 		}
-		
+
 		int initialPositionX = stopPositionX;
 		int finalPositionX = stopPositionX;
-		
+
 		Token firstTk = new Token(linha.length());
-		
+
 		for (int i = 0; i < TokenService.getExpressoes().size(); i++) {
 			Token tk = regexChecker(TokenService.getExpressoes().get(Categories.values()[i]), linha.substring(stopPositionX));
-			
+
 			if (tk != null) {
-				tk.categorie = Categories.values()[i];
-				tk.categorieNumber = tk.categorie.ordinal();
-				tk.positionY = stopPositionY;
+				if (TokenService.getReserved().containsKey(tk.lexema)) {
+					tk.categorie = TokenService.getReserved().get(tk.lexema);
+				} else {
+					tk.categorie = Categories.values()[i];
+				}
 				
+				tk.categorieNumber = tk.categorie.ordinal();
+				
+				tk.positionY = stopPositionY;
+
 				if (tk.positionX < firstTk.positionX) {
 					firstTk = tk;
 					finalPositionX = stopPositionX;
 				}	
 			}
-			
+
 			stopPositionX = initialPositionX;
 		}
-		
+
 		stopPositionX = finalPositionX;
 		return firstTk;
 	}
@@ -73,10 +79,10 @@ public class Token {
 		if(regexMatcher.find()) {
 			lexema = regexMatcher.group();
 			posX = regexMatcher.start() + stopPositionX;
-			
+
 			Token tk = new Token(posX);
 			tk.lexema = lexema;
-			
+
 			stopPositionX = stopPositionX + regexMatcher.end();
 			return tk;
 		}
