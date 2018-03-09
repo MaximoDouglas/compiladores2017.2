@@ -20,16 +20,54 @@ public class Token {
 	private Token(int positionX) {
 		this.positionX = positionX;
 	}
+	
+	//Conta espaços em branco no começo da linha
+	public static int getSpaces(String str) {
+		int i = 0, count = 0;
+		while(str.charAt(i) == ' ') {
+			count ++;
+			i++;
+		}
+		return count;
+	}
+	
+	//Remove espaços em branco no final da linha
+	public static String removeFinalSpaces(String str) {
+	    if(str == null) return null;
+	    
+	    int len = str.length();
+	    
+	    for( ; len > 0; len--) {
+	      if(!Character.isWhitespace(str.charAt(len - 1))) break;
+	    }
+	    return str.substring(0, len);
+	}
 
 	public static Token nextToken() {
-
 		String linha = Runner.getNextLine(stopPositionY);
-		linha = linha.trim();
+		//System.out.println("Aqui: " + linha);
+		int spaces = getSpaces(linha);
+		
+		//System.out.println("Linha: " + linha);
 
-		while((linha.trim().equals("") || stopPositionX >= linha.length()) && stopPositionY < Runner.getLines() - 1)	 {
+		while(linha.trim().equals("")) {
 			stopPositionY++;
 			linha = Runner.getNextLine(stopPositionY);
-			stopPositionX = 0;
+		}
+		linha = removeFinalSpaces(linha);
+		
+		while(stopPositionX >= linha.length() && stopPositionY < Runner.getLines() - 1)	 {
+			stopPositionY++;
+			linha = Runner.getNextLine(stopPositionY);
+			
+			while(linha.trim().equals("")) {
+				stopPositionY++;
+				linha = Runner.getNextLine(stopPositionY);
+			}
+			
+			linha = removeFinalSpaces(linha);
+			spaces = getSpaces(linha);
+			stopPositionX = spaces;
 			System.out.println("---------------------------------------------"); //pra ficar mais claro os tokens por linha
 		}	
 
@@ -66,6 +104,7 @@ public class Token {
 		}
 
 		stopPositionX = finalPositionX;
+		//System.out.println("Inicial:" + tk.po);
 		return firstTk;
 	}
 

@@ -20,8 +20,8 @@ public class TokenService {
 		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]"); 
 		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"[^\\r\\n]*\")|(\\['\\w'([,]'\\w')*\\])"); 
 		expressoesECategorias.put(Categories.CTE_CHAR, "'\\w'"); 
-		expressoesECategorias.put(Categories.CTE_CAD_FL, "\\[((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+)(,((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+))*\\]");	//consertar!!!!
-		expressoesECategorias.put(Categories.CTE_FLOAT, "((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+)"); 
+		expressoesECategorias.put(Categories.CTE_CAD_FL, "\\[(([-]?(\\d)*\\.\\d+)|[-]?\\d+\\.(\\d)*)(,([-]?\\d+\\.(\\d)*)|([-]?(\\d)*\\.\\d+))*\\]");	
+		expressoesECategorias.put(Categories.CTE_FLOAT, "((\\-)?\\d+\\.(\\d)*)|((\\-)?(\\d)*\\.\\d+)"); 
 		expressoesECategorias.put(Categories.CTE_CAD_IN, "\\[(\\-)?\\d+(,(\\-)?\\d+)*\\]"); 
 		expressoesECategorias.put(Categories.CTE_INT, "(\\-)?\\d+"); 
 		expressoesECategorias.put(Categories.CTE_CAD_BO, "\\[(true|false)(,(true|false))*\\]"); 
@@ -35,7 +35,7 @@ public class TokenService {
 		expressoesECategorias.put(Categories.TIPO_VOID, "void"); 
 		expressoesECategorias.put(Categories.OP_CONC, "\\+\\+"); 
 		expressoesECategorias.put(Categories.OPA_AD, "[+]"); 
-		expressoesECategorias.put(Categories.OPA_SUB, "$-$"); 
+		expressoesECategorias.put(Categories.OPA_SUB, "\\-"); //CONSERTAR: 1-2 RETORNA DUAS CONSTANTES INTEIRAS
 		expressoesECategorias.put(Categories.OPA_MULT, "[*]"); 
 		expressoesECategorias.put(Categories.COMENTARIO, "//.*$"); 
 		expressoesECategorias.put(Categories.OPA_DIV, "\\/"); 
