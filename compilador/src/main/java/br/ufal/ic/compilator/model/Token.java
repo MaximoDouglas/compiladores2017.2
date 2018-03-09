@@ -46,7 +46,7 @@ public class Token {
 		Token firstTk = new Token(linha.length());
 		
 		for (int i = 0; i < TokenService.getExpressoes().size(); i++) {
-			Token tk = regexChecker(TokenService.getExpressoes().get(i), linha.substring(stopPositionX));
+			Token tk = regexChecker(TokenService.getExpressoes().get(Categories.values()[i]), linha.substring(stopPositionX));
 			
 			if (tk != null) {
 				tk.categorie = Categories.values()[i];

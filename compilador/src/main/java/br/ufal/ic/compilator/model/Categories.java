@@ -29,7 +29,8 @@ public enum Categories {
     OP_CONC,
     OPA_AD, 
     OPA_SUB, 
-    OPA_MULT, 
+    OPA_MULT,
+    COMENTARIO,
     OPA_DIV,
     OPR_DIF, 
     OPR_MEN, 
@@ -46,6 +47,5 @@ public enum Categories {
     WHILE,
     ENTRADA, 
     SAIDA, 
-    SAIDA_LN,
-    COMENTARIO
+    SAIDA_LN
 }

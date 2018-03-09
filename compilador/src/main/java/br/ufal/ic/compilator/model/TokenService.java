@@ -1,64 +1,63 @@
 package br.ufal.ic.compilator.model;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TokenService {
-	private static ArrayList<String> expressoes = new ArrayList();
-	
+
+	private static Map<Categories, String> expressoesECategorias = new HashMap<Categories, String>();
+
 	public static void fillExpressoes () {
-		// | 
-		
-		expressoes.add("main"); //MAIN
-		expressoes.add("[;]"); //PONT_VIRG
-		expressoes.add("[,]"); //VIRGULA
-		expressoes.add("[(]"); //AB_PARENTE
-		expressoes.add("[)]"); //FE_PARENTE
-		expressoes.add("[{]"); //AB_CHAVE
-		expressoes.add("[}]"); //FE_CHAVE
-		expressoes.add("[x]"); //ID               EM FALTA
-		expressoes.add("=="); //OPR_IGUAL
-		expressoes.add("[=]"); //ATRIBUICAO
-		expressoes.add("(\"[^\\r\\n]*\")|(\\['\\w'([,]'\\w')*\\])"); //CTE_CAD_CH
-		expressoes.add("'\\w'"); //CTE_CHAR
-		expressoes.add("\\[((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+)(,((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+))*\\]"); //CTE_CAD_FL   consertar!!!!
-		expressoes.add("((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+)"); //CTE_FLOAT
-		expressoes.add("\\[(\\-)?\\d+(,(\\-)?\\d+)*\\]"); //CTE_CAD_IN
-		expressoes.add("(\\-)?\\d+"); //CTE_INT
-		expressoes.add("\\[(true|false)(,(true|false))*\\]"); //CTE_CAD_BO
-		expressoes.add("true|false"); //CTE_BOOL
-		expressoes.add("\\["); //AB_COLCHET
-		expressoes.add("\\]"); //FE_COLCHET
-		expressoes.add("int"); //TIPO_INT
-		expressoes.add("float"); //TIPO_FLOAT
-		expressoes.add("boolean"); //TIPO_BOOL
-		expressoes.add("char"); //TIPO_CHAR
-		expressoes.add("void"); //TIPO_VOID
-		expressoes.add("\\+\\+"); //OP_CONC
-		expressoes.add("[+]"); //OPA_AD
-		expressoes.add("$-$"); //OPA_SUB
-		expressoes.add("[*]"); //OPA_MULT
-		expressoes.add("\\/"); //OPA_DIV
-		expressoes.add("!="); //OPR_DIF
-		expressoes.add("[<]"); //OPR_MEN
-		expressoes.add("<="); //OPR_MEN_IG
-		expressoes.add("[>]"); //OPR_MAI
-		expressoes.add(">="); //OPR_MAI_IG
-		expressoes.add("\\|"); //OPL_OU
-		expressoes.add("[&]"); //OPL_E
-		expressoes.add("[!]"); //OPL_NAO
-		expressoes.add("return"); //RETORNO
-		expressoes.add("if"); //SE
-		expressoes.add("else"); //SENAO
-		expressoes.add("for"); //FOR
-		expressoes.add("while"); //WHILE
-		expressoes.add("read"); //ENTRADA
-		expressoes.add("print"); //SAIDA
-		expressoes.add("println"); //SAIDA_LN
-		expressoes.add("//.*$"); //COMENTARIO
+		expressoesECategorias.put(Categories.MAIN, "main"); //MAIN
+		expressoesECategorias.put(Categories.PONT_VIRG, "[;]"); 
+		expressoesECategorias.put(Categories.VIRGULA, "[,]"); 
+		expressoesECategorias.put(Categories.AB_PARENTE, "[(]"); 
+		expressoesECategorias.put(Categories.FE_PARENTE, "[)]");
+		expressoesECategorias.put(Categories.AB_CHAVE, "[{]"); 
+		expressoesECategorias.put(Categories.FE_CHAVE, "[}]"); 
+		expressoesECategorias.put(Categories.ID, "[x]");	//EM FALTA
+		expressoesECategorias.put(Categories.OPR_IGUAL, "==");
+		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]"); 
+		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"[^\\r\\n]*\")|(\\['\\w'([,]'\\w')*\\])"); 
+		expressoesECategorias.put(Categories.CTE_CHAR, "'\\w'"); 
+		expressoesECategorias.put(Categories.CTE_CAD_FL, "\\[((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+)(,((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+))*\\]");	//consertar!!!!
+		expressoesECategorias.put(Categories.CTE_FLOAT, "((\\-)?\\d+\\.(\\d+)?)|((\\-)?(\\d+)?\\.\\d+)"); 
+		expressoesECategorias.put(Categories.CTE_CAD_IN, "\\[(\\-)?\\d+(,(\\-)?\\d+)*\\]"); 
+		expressoesECategorias.put(Categories.CTE_INT, "(\\-)?\\d+"); 
+		expressoesECategorias.put(Categories.CTE_CAD_BO, "\\[(true|false)(,(true|false))*\\]"); 
+		expressoesECategorias.put(Categories.CTE_BOOL, "true|false"); 
+		expressoesECategorias.put(Categories.AB_COLCHET, "\\["); 
+		expressoesECategorias.put(Categories.FE_COLCHET, "\\]"); 
+		expressoesECategorias.put(Categories.TIPO_INT, "int"); 
+		expressoesECategorias.put(Categories.TIPO_FLOAT, "float"); 
+		expressoesECategorias.put(Categories.TIPO_BOOL, "boolean"); 
+		expressoesECategorias.put(Categories.TIPO_CHAR, "char"); 
+		expressoesECategorias.put(Categories.TIPO_VOID, "void"); 
+		expressoesECategorias.put(Categories.OP_CONC, "\\+\\+"); 
+		expressoesECategorias.put(Categories.OPA_AD, "[+]"); 
+		expressoesECategorias.put(Categories.OPA_SUB, "$-$"); 
+		expressoesECategorias.put(Categories.OPA_MULT, "[*]"); 
+		expressoesECategorias.put(Categories.COMENTARIO, "//.*$"); 
+		expressoesECategorias.put(Categories.OPA_DIV, "\\/"); 
+		expressoesECategorias.put(Categories.OPR_DIF, "!="); 
+		expressoesECategorias.put(Categories.OPR_MEN, "[<]"); 
+		expressoesECategorias.put(Categories.OPR_MEN_IG, "<="); 
+		expressoesECategorias.put(Categories.OPR_MAI, "[>]"); 
+		expressoesECategorias.put(Categories.OPR_MAI_IG, ">="); 
+		expressoesECategorias.put(Categories.OPL_OU, "\\|"); 
+		expressoesECategorias.put(Categories.OPL_E, "[&]"); 
+		expressoesECategorias.put(Categories.OPL_NAO, "[!]"); 
+		expressoesECategorias.put(Categories.RETORNO, "return"); 
+		expressoesECategorias.put(Categories.SE, "if"); 
+		expressoesECategorias.put(Categories.SENAO, "else"); 
+		expressoesECategorias.put(Categories.FOR, "for"); 
+		expressoesECategorias.put(Categories.WHILE, "while"); 
+		expressoesECategorias.put(Categories.ENTRADA, "read"); 
+		expressoesECategorias.put(Categories.SAIDA, "print"); 
+		expressoesECategorias.put(Categories.SAIDA_LN, "println"); 
 	}
-	
-	public static ArrayList<String> getExpressoes(){
-		return expressoes;
+
+	public static Map<Categories, String> getExpressoes(){
+		return expressoesECategorias;
 	}
-	
 }
