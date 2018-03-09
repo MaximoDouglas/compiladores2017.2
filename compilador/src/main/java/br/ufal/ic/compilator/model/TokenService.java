@@ -46,9 +46,9 @@ public class TokenService {
 		expressoesECategorias.put(Categories.OPR_MAI_IG, ">="); 
 		expressoesECategorias.put(Categories.OPL_OU, "\\|"); 
 		expressoesECategorias.put(Categories.OPL_E, "[&]"); 
-		expressoesECategorias.put(Categories.OPL_NAO, "[!]"); 
-		expressoesECategorias.put(Categories.RETORNO, "return"); 
-		expressoesECategorias.put(Categories.SE, "if"); 
+		expressoesECategorias.put(Categories.OPL_NAO, "[!]");
+		expressoesECategorias.put(Categories.SE, "if");
+		expressoesECategorias.put(Categories.RETORNO, "return");
 		expressoesECategorias.put(Categories.SENAO, "else"); 
 		expressoesECategorias.put(Categories.FOR, "for"); 
 		expressoesECategorias.put(Categories.WHILE, "while"); 

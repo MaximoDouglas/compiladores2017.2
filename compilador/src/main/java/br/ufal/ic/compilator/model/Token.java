@@ -1,9 +1,7 @@
 package br.ufal.ic.compilator.model;
 
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import br.ufal.ic.compilator.runner.Runner;
 
 public class Token {
@@ -12,7 +10,6 @@ public class Token {
 	private static int stopPositionX = 0;
 
 	private int positionX;
-
 	private int positionY;
 
 	private Categories categorie;
@@ -25,9 +22,9 @@ public class Token {
 	}
 
 	public static Token nextToken() {
+		
 		String linha = Runner.getNextLine(stopPositionY);
 		linha = linha.trim();
-		
 		
 		while((linha.trim().equals("") || stopPositionX >= linha.length()) && stopPositionY < Runner.getLines() - 1)	 {
 			stopPositionY++;

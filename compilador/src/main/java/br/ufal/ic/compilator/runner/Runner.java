@@ -10,10 +10,10 @@ import br.ufal.ic.compilator.model.Token;
 import br.ufal.ic.compilator.model.TokenService;
 
 public class Runner {
+	
 	private static ArrayList<String> arquivo = new ArrayList<String>();
 
 	public static void main(String[] args) throws IOException{
-
 		TokenService.fillExpressoes();
 
 		arquivoBuild(args);
@@ -51,6 +51,7 @@ public class Runner {
 
 	private static void getNextToken() {
 		Token tk = Token.nextToken();
+		
 		while(tk != null) {
 			System.out.println(tk.toString());
 			tk = Token.nextToken();
