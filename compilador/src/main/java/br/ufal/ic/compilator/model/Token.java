@@ -2,6 +2,9 @@ package br.ufal.ic.compilator.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import javax.sql.rowset.CachedRowSet;
+
 import br.ufal.ic.compilator.runner.Runner;
 
 public class Token {
@@ -24,7 +27,7 @@ public class Token {
 	//Conta espaços em branco no começo da linha
 	public static int getSpaces(String str) {
 		int i = 0, count = 0;
-		while(str.charAt(i) == ' ') {
+		while(str.length() != 0 && str.charAt(i) == ' ') {
 			count ++;
 			i++;
 		}
@@ -45,17 +48,15 @@ public class Token {
 
 	public static Token nextToken() {
 		String linha = Runner.getNextLine(stopPositionY);
-		//System.out.println("Aqui: " + linha);
-		int spaces = getSpaces(linha);
-		
-		//System.out.println("Linha: " + linha);
+		int spaces;
 
 		while(linha.trim().equals("")) {
 			stopPositionY++;
 			linha = Runner.getNextLine(stopPositionY);
 		}
 		linha = removeFinalSpaces(linha);
-		
+		spaces = getSpaces(linha);
+				
 		while(stopPositionX >= linha.length() && stopPositionY < Runner.getLines() - 1)	 {
 			stopPositionY++;
 			linha = Runner.getNextLine(stopPositionY);
@@ -83,7 +84,7 @@ public class Token {
 		for (int i = 0; i < TokenService.getExpressoes().size(); i++) {
 			Token tk = regexChecker(TokenService.getExpressoes().get(Categories.values()[i]), linha.substring(stopPositionX));
 
-			if (tk != null) {
+			if (tk != null) {			
 				if (TokenService.getReserved().containsKey(tk.lexema)) {
 					tk.categorie = TokenService.getReserved().get(tk.lexema);
 				} else {
@@ -104,7 +105,6 @@ public class Token {
 		}
 
 		stopPositionX = finalPositionX;
-		//System.out.println("Inicial:" + tk.po);
 		return firstTk;
 	}
 
@@ -130,7 +130,7 @@ public class Token {
 	}
 
 	public String toString() {
-		String string = "["+this.positionY+", "+this.positionX+"] ("+this.categorieNumber+", "+this.categorie.name()+") {"+this.lexema+"}";
+		String string = "["+this.positionY+", "+this.positionX+"] ("+this.categorieNumber+", "+this.categorie.name()+") {"+this.lexema.trim()+"}";
 
 		return string;
 	}
