@@ -9,6 +9,7 @@ public class Token {
 
 	private static int stopPositionY = 0;
 	private static int stopPositionX = 0;
+	private static Token lastTk = null;
 
 	private int positionX;
 	private int positionY;
@@ -82,16 +83,23 @@ public class Token {
 		for (int i = 0; i < TokenService.getExpressoes().size(); i++) {
 			Token tk = regexChecker(TokenService.getExpressoes().get(Categories.values()[i]), linha.substring(stopPositionX));
 
-			if (tk != null) {			
+			if (tk != null) {
 				if (TokenService.getReserved().containsKey(tk.lexema)) {
 					tk.categorie = TokenService.getReserved().get(tk.lexema);
 				} else {
 					tk.categorie = Categories.values()[i];
 				}
 				
-				tk.categorieNumber = tk.categorie.ordinal();
-				
 				tk.positionY = stopPositionY;
+				
+				if (lastTk != null && tk.categorie == Categories.CTE_INT && lastTk.categorie == Categories.CTE_INT 
+						&& Integer.valueOf(tk.lexema) < 0 && tk.positionY == lastTk.positionY) {
+					tk.categorie = Categories.OPA_SUB;
+					tk.lexema = "-";
+					stopPositionX = tk.positionX + 1;
+				}
+				
+				tk.categorieNumber = tk.categorie.ordinal();
 
 				if (tk.positionX < firstTk.positionX) {
 					firstTk = tk;
@@ -103,6 +111,7 @@ public class Token {
 		}
 
 		stopPositionX = finalPositionX;
+		lastTk = firstTk;
 		return firstTk;
 	}
 
