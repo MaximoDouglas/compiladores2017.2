@@ -35,7 +35,8 @@ public class TokenService {
 		expressoesECategorias.put(Categories.TIPO_VOID, "void"); 
 		expressoesECategorias.put(Categories.OP_CONC, "\\+\\+"); 
 		expressoesECategorias.put(Categories.OPA_AD, "[+]"); 
-		expressoesECategorias.put(Categories.OPA_SUB, "[ ]*[-][ ]*"); //CONSERTAR: 1-2 RETORNA DUAS CONSTANTES INTEIRAS
+		expressoesECategorias.put(Categories.OPA_NEGA, "[-]"); 
+		expressoesECategorias.put(Categories.OPA_SUB, "[ ]*[-][ ]*"); 
 		expressoesECategorias.put(Categories.OPA_MULT, "[*]"); 
 		expressoesECategorias.put(Categories.COMENTARIO, "//.*$"); 
 		expressoesECategorias.put(Categories.OPA_DIV, "\\/"); 

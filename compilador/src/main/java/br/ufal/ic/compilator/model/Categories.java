@@ -28,6 +28,7 @@ public enum Categories {
     TIPO_VOID,
     OP_CONC,
     OPA_AD, 
+    OPA_NEGA,
     OPA_SUB, 
     OPA_MULT,
     COMENTARIO,

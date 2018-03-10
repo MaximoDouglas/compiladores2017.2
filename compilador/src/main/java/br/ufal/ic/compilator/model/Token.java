@@ -92,12 +92,25 @@ public class Token {
 				
 				tk.positionY = stopPositionY;
 				
-				if (lastTk != null && tk.categorie == Categories.CTE_INT && lastTk.categorie == Categories.CTE_INT 
-						&& Integer.valueOf(tk.lexema) < 0 && tk.positionY == lastTk.positionY) {
+				
+//				if ((lastTk != null && (lastTk.categorie == Categories.AB_PARENTE
+//						|| lastTk.categorie == Categories.AB_COLCHET || lastTk.categorie == Categories.ATRIBUICAO)
+//						&& tk.positionY == lastTk.positionY && (tk.categorie != Categories.CTE_INT || tk.categorie != Categories.CTE_FLOAT))) {
+//					
+//					System.out.println("Aqui: " + tk.categorie);
+//					tk.categorie = Categories.OPA_NEGA;
+//					tk.lexema = "-";
+//				}
+				
+				if ((lastTk != null && tk.categorie == Categories.CTE_INT && (lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.ID)
+						&& tk.positionY == lastTk.positionY) 
+						|| (lastTk != null && tk.categorie == Categories.CTE_FLOAT && (lastTk.categorie == Categories.CTE_FLOAT || lastTk.categorie == Categories.ID)
+						&& tk.positionY == lastTk.positionY)) {
 					tk.categorie = Categories.OPA_SUB;
 					tk.lexema = "-";
 					stopPositionX = tk.positionX + 1;
 				}
+				
 				
 				tk.categorieNumber = tk.categorie.ordinal();
 
