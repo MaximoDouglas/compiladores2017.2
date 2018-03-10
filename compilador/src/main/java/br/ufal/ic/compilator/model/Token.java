@@ -3,8 +3,6 @@ package br.ufal.ic.compilator.model;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.sql.rowset.CachedRowSet;
-
 import br.ufal.ic.compilator.runner.Runner;
 
 public class Token {
