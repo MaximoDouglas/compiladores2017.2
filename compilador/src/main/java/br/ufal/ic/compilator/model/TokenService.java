@@ -9,6 +9,7 @@ public class TokenService {
 	private static Map<String, Categories> reservedWords = new HashMap<String, Categories>();
 
 	public static void fillExpressoes () {
+		expressoesECategorias.put(Categories.ID, "[a-zA-Z_][a-zA-Z0-9_]{0,30}");
 		expressoesECategorias.put(Categories.MAIN, "main");
 		expressoesECategorias.put(Categories.PONT_VIRG, "[;]"); 
 		expressoesECategorias.put(Categories.VIRGULA, "[,]"); 
@@ -26,6 +27,8 @@ public class TokenService {
 		expressoesECategorias.put(Categories.CTE_INT, "(\\-)?\\d+"); 
 		expressoesECategorias.put(Categories.CTE_CAD_BO, "\\[(true|false)(,(true|false))*\\]"); 
 		expressoesECategorias.put(Categories.CTE_BOOL, "true|false"); 
+		//expressoesECategorias.put(Categories.OPA_NEGA, "[-]"); 
+		expressoesECategorias.put(Categories.OPA_SUB, "[ ]*[-][ ]*"); 
 		expressoesECategorias.put(Categories.AB_COLCHET, "\\["); 
 		expressoesECategorias.put(Categories.FE_COLCHET, "\\]"); 
 		expressoesECategorias.put(Categories.TIPO_INT, "int"); 
@@ -35,8 +38,6 @@ public class TokenService {
 		expressoesECategorias.put(Categories.TIPO_VOID, "void"); 
 		expressoesECategorias.put(Categories.OP_CONC, "\\+\\+"); 
 		expressoesECategorias.put(Categories.OPA_AD, "[+]"); 
-		expressoesECategorias.put(Categories.OPA_NEGA, "[-]"); 
-		expressoesECategorias.put(Categories.OPA_SUB, "[ ]*[-][ ]*"); 
 		expressoesECategorias.put(Categories.OPA_MULT, "[*]"); 
 		expressoesECategorias.put(Categories.COMENTARIO, "//.*$"); 
 		expressoesECategorias.put(Categories.OPA_DIV, "\\/"); 
@@ -48,16 +49,15 @@ public class TokenService {
 		expressoesECategorias.put(Categories.OPL_OU, "\\|"); 
 		expressoesECategorias.put(Categories.OPL_E, "[&]"); 
 		expressoesECategorias.put(Categories.OPL_NAO, "[!]");
-		expressoesECategorias.put(Categories.SE, "if");
 		expressoesECategorias.put(Categories.RETORNO, "return");
+		expressoesECategorias.put(Categories.SE, "if");
 		expressoesECategorias.put(Categories.SENAO, "else"); 
 		expressoesECategorias.put(Categories.FOR, "for"); 
 		expressoesECategorias.put(Categories.WHILE, "while"); 
 		expressoesECategorias.put(Categories.ENTRADA, "read"); 
 		expressoesECategorias.put(Categories.SAIDA, "print"); 
 		expressoesECategorias.put(Categories.SAIDA_LN, "println");
-		expressoesECategorias.put(Categories.ID, "[a-zA-Z_][a-zA-Z0-9_]{0,30}");
-
+		
 		reservedWords.put("main", Categories.MAIN);
 		reservedWords.put("true", Categories.CTE_BOOL);
 		reservedWords.put("false", Categories.CTE_BOOL);

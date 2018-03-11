@@ -1,6 +1,7 @@
 package br.ufal.ic.compilator.model;
 
 public enum Categories {
+	ID,
 	MAIN,
 	PONT_VIRG,
 	VIRGULA,
@@ -8,7 +9,6 @@ public enum Categories {
     FE_PARENTE,
     AB_CHAVE,
     FE_CHAVE,
-    ID,
     OPR_IGUAL, 
     ATRIBUICAO, 
     CTE_CAD_CH,
@@ -19,6 +19,8 @@ public enum Categories {
     CTE_INT,
     CTE_CAD_BO,
     CTE_BOOL,
+    //OPA_NEGA,
+    OPA_SUB, 
     AB_COLCHET,
     FE_COLCHET,	
     TIPO_INT, 
@@ -28,8 +30,6 @@ public enum Categories {
     TIPO_VOID,
     OP_CONC,
     OPA_AD, 
-    OPA_NEGA,
-    OPA_SUB, 
     OPA_MULT,
     COMENTARIO,
     OPA_DIV,

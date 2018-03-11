@@ -111,7 +111,6 @@ public class Token {
 					stopPositionX = tk.positionX + 1;
 				}
 				
-				
 				tk.categorieNumber = tk.categorie.ordinal();
 
 				if (tk.positionX < firstTk.positionX) {
