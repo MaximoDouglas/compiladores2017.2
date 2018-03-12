@@ -92,9 +92,9 @@ public class Token {
 				
 				tk.positionY = stopPositionY;
 				
-				if(lastTk != null && tk.categorie == Categories.OPA_SUB && (lastTk.categorie == Categories.AB_PARENTE 
+				if((stopPositionX == 1 && tk.categorie == Categories.OPA_SUB) || (lastTk != null && tk.categorie == Categories.OPA_SUB && (lastTk.categorie == Categories.AB_PARENTE 
 					|| lastTk.categorie == Categories.ATRIBUICAO || 
-					lastTk.categorie == Categories.AB_COLCHET)) {
+					lastTk.categorie == Categories.AB_COLCHET))) {
 					tk.lexema = "-";
 					tk.categorie = Categories.OPA_NEGA;
 				}

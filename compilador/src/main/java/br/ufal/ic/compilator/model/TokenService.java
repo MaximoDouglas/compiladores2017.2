@@ -23,7 +23,7 @@ public class TokenService {
 		expressoesECategorias.put(Categories.OPR_MAI_IG, ">="); 
 		expressoesECategorias.put(Categories.OPR_MAI, "[>]"); 
 		expressoesECategorias.put(Categories.OPR_IGUAL, "==");
-		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]"); 
+		expressoesECategorias.put(Categories.ATRIBUICAO, "[ ]*[=][ ]*"); 
 		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"[^\\r\\n]*\")|(\\['\\w'([,]'\\w')*\\])"); 
 		expressoesECategorias.put(Categories.CTE_CHAR, "'\\s'"); 
 		expressoesECategorias.put(Categories.CTE_CAD_FL, "\\[(([-]?(\\d)*\\.\\d+)|[-]?\\d+\\.(\\d)*)(,(([-]?\\d+\\.(\\d)*)|([-]?(\\d)*\\.\\d+)))*\\]");	
