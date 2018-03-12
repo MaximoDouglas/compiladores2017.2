@@ -1,0 +1,30 @@
+void fib(int limite, int seq[]) {
+  int aux;
+  aux = 0;
+  
+  while(aux < limite) {
+    if(aux == 0 | aux == 1) {
+      seq[aux] = aux;
+    } else {
+      seq[aux] = seq[aux - 1] + seq[aux - 2];
+    }  
+    aux = aux + 1;
+  }
+}
+
+void main() {
+  int limite;
+  int aux;
+  aux = 0;
+  
+  read("%i", limite);
+  int sequencia[limite + 1];
+  
+  fib(limite, sequencia);
+  
+  while(aux < limite - 1) {
+    print("%i, ", sequencia[aux]);
+    aux = aux + 1;
+  }
+  println("%i", sequencia[limite - 1]);
+}
