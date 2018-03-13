@@ -91,6 +91,10 @@ public class Token {
 				}
 				
 				tk.positionY = stopPositionY;
+
+				if((tk.categorie == Categories.CTE_CAD_CH && tk.lexema.charAt(0) == '"') || tk.categorie == Categories.CTE_CHAR) {
+					tk.lexema = tk.lexema.substring(1, tk.lexema.length() - 1);
+				}
 				
 				if((stopPositionX == 1 && tk.categorie == Categories.OPA_SUB) || (lastTk != null && tk.categorie == Categories.OPA_SUB && (lastTk.categorie == Categories.AB_PARENTE 
 					|| lastTk.categorie == Categories.ATRIBUICAO || 
@@ -146,7 +150,7 @@ public class Token {
 	}
 
 	public String toString() {
-		String string = "["+this.positionY+", "+this.positionX+"] ("+this.categorieNumber+", "+this.categorie.name()+") {"+this.lexema.trim()+"}";
+		String string = "["+String.format("%03d", this.positionY + 1)+", "+ String.format("%03d", this.positionX + 1)+ "] ("+String.format("%04d", this.categorieNumber)+", "+this.categorie.name()+") {"+this.lexema.trim()+"}";
 
 		return string;
 	}

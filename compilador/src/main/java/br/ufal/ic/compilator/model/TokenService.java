@@ -18,12 +18,12 @@ public class TokenService {
 		expressoesECategorias.put(Categories.AB_CHAVE, "[{]"); 
 		expressoesECategorias.put(Categories.FE_CHAVE, "[}]"); 
 		expressoesECategorias.put(Categories.OPR_DIF, "!="); 
-		expressoesECategorias.put(Categories.OPR_MEN_IG, "[ ]*<=[ ]*");
-		expressoesECategorias.put(Categories.OPR_MEN, "[ ]*[<][ ]*"); 
-		expressoesECategorias.put(Categories.OPR_MAI_IG, "[ ]*>=[ ]*"); 
-		expressoesECategorias.put(Categories.OPR_MAI, "[ ]*[>][ ]*"); 
-		expressoesECategorias.put(Categories.OPR_IGUAL, "[ ]*==[ ]*");
-		expressoesECategorias.put(Categories.ATRIBUICAO, "[ ]*[=][ ]*"); 
+		expressoesECategorias.put(Categories.OPR_MEN_IG, "<=");
+		expressoesECategorias.put(Categories.OPR_MEN, "[<]"); 
+		expressoesECategorias.put(Categories.OPR_MAI_IG, ">="); 
+		expressoesECategorias.put(Categories.OPR_MAI, "[>]"); 
+		expressoesECategorias.put(Categories.OPR_IGUAL, "==");
+		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]"); 
 		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"[^\\r\\n]*\")|(\\['\\w'([,]'\\w')*\\])"); 
 		expressoesECategorias.put(Categories.CTE_CHAR, "'\\s'"); 
 		expressoesECategorias.put(Categories.CTE_CAD_FL, "\\[(([-]?(\\d)*\\.\\d+)|[-]?\\d+\\.(\\d)*)(,(([-]?\\d+\\.(\\d)*)|([-]?(\\d)*\\.\\d+)))*\\]");	
@@ -32,7 +32,7 @@ public class TokenService {
 		expressoesECategorias.put(Categories.CTE_INT, "(\\-)?\\d+"); 
 		expressoesECategorias.put(Categories.CTE_CAD_BO, "\\[(true|false)(,(true|false))*\\]"); 
 		expressoesECategorias.put(Categories.CTE_BOOL, "true|false"); 
-		expressoesECategorias.put(Categories.OPA_SUB, "[ ]*[-][ ]*"); 
+		expressoesECategorias.put(Categories.OPA_SUB, "[-]"); 
 		expressoesECategorias.put(Categories.OPA_NEGA, "[-]"); 
 		expressoesECategorias.put(Categories.AB_COLCHET, "\\["); 
 		expressoesECategorias.put(Categories.FE_COLCHET, "\\]"); 
