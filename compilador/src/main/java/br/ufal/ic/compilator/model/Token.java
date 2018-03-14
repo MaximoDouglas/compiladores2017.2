@@ -62,7 +62,7 @@ public class Token {
 			stopPositionY++;
 			linha = Runner.getNextLine(stopPositionY);
 
-			while(linha.trim().equals("")) {
+			while(linha.trim().equals("") && stopPositionY < Runner.getLines() - 1) {
 				stopPositionY++;
 				linha = Runner.getNextLine(stopPositionY);
 			}
@@ -126,37 +126,38 @@ public class Token {
 			stopPositionX = initialPositionX;
 		}
 
-		//Testa se o token que vai ser retornado é o primeiro (lastTk ainda é null). Se for, verifica se ele começa no começo da linha, caso contrário, pode haver algo antes dele que não foi identificado. 
-		//Nesse caso, manda esse pedaço da linha para análise
-		if (lastTk == null && firstTk.positionX > 0) {
-			firstTk = lexicalErrorCollector(linha.substring(0, firstTk.positionX));
-		} else if (firstTk == tempTK) { //Verifica se o firstTk não foi modificado. Caso não tenha sido (ainda é igual a antes das verificações) significa que nenhum token foi encontrado nessa passagem. Manda para análise o mesmo trecho de linha que recebeu.
-			firstTk = lexicalErrorCollector(linha.substring(stopPositionX));
-		} else { //Esse else serve apenas para modificar o stopPosition. Caso não ocorra problemas, ele modifica a posição adequadamente, como era feito antes dessas modificações. 
-			stopPositionX = finalPositionX;
-		}
-
+//		//Testa se o token que vai ser retornado é o primeiro (lastTk ainda é null). Se for, verifica se ele começa no começo da linha, caso contrário, pode haver algo antes dele que não foi identificado. 
+//		//Nesse caso, manda esse pedaço da linha para análise
+//		if (lastTk == null && firstTk.positionX > 0) {
+//			firstTk = lexicalErrorCollector(linha.substring(0, firstTk.positionX));
+//		} else if (firstTk == tempTK) { //Verifica se o firstTk não foi modificado. Caso não tenha sido (ainda é igual a antes das verificações) significa que nenhum token foi encontrado nessa passagem. Manda para análise o mesmo trecho de linha que recebeu.
+//			firstTk = lexicalErrorCollector(linha.substring(stopPositionX));
+//		} else { //Esse else serve apenas para modificar o stopPosition. Caso não ocorra problemas, ele modifica a posição adequadamente, como era feito antes dessas modificações. 
+//			stopPositionX = finalPositionX;
+//		}
+		
+		stopPositionX = finalPositionX;
 		lastTk = firstTk;
 		return firstTk;
 	}
 
-	private static Token lexicalErrorCollector(String string) {
-
-		//Captura de string mal escrita
-		if (string.contains("\"")) {
-			Token tk = new Token(stopPositionX + string.indexOf("\""));
-			tk.categorie = Categories.TK_ER_STR;
-			tk.categorieNumber = tk.categorie.ordinal();
-			tk.positionY = stopPositionY;
-			tk.lexema = string.trim();
-			stopPositionX = stopPositionX + string.length();
-			return tk;
-		} 
-		
-		//Esse retorno é provisório, porque seria retornado null quando fosse verificado o espaço vazio, coisa que não deve acontecer.
-		return null;
-
-	}
+//	private static Token lexicalErrorCollector(String string) {
+//
+//		//Captura de string mal escrita
+//		if (string.contains("\"")) {
+//			Token tk = new Token(stopPositionX + string.indexOf("\""));
+//			tk.categorie = Categories.TK_ER_STR;
+//			tk.categorieNumber = tk.categorie.ordinal();
+//			tk.positionY = stopPositionY;
+//			tk.lexema = string.trim();
+//			stopPositionX = stopPositionX + string.length();
+//			return tk;
+//		} 
+//		
+//		//Esse retorno é provisório, porque seria retornado null quando fosse verificado o espaço vazio, coisa que não deve acontecer.
+//		return null;
+//
+//	}
 
 	private static Token regexChecker(String theRegex, String theString) {
 		Pattern checkRegex = Pattern.compile(theRegex);
@@ -180,7 +181,7 @@ public class Token {
 	}
 
 	public String toString() {
-		String string = "["+String.format("%03d", this.positionY + 1)+", "+ String.format("%03d", this.positionX + 1)+ "] ("+String.format("%04d", this.categorieNumber)+", "+this.categorie.name()+") {"+this.lexema.trim()+"}";
+		String string = "["+String.format("%03d", this.positionY + 1)+", "+ String.format("%03d", this.positionX + 1)+ "] ("+String.format("%04d", this.categorieNumber)+", "+this.categorie.name()+") {"+this.lexema+"}";
 
 		return string;
 	}

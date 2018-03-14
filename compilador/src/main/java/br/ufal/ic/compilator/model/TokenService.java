@@ -25,7 +25,7 @@ public class TokenService {
 		expressoesECategorias.put(Categories.OPR_IGUAL, "==");
 		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]"); 
 		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"[^\\r\\n]*\")|(\\['\\w'([,]'\\w')*\\])"); 
-		expressoesECategorias.put(Categories.CTE_CHAR, "'\\s'"); 
+		expressoesECategorias.put(Categories.CTE_CHAR, "'[^\\r\\n]{0,1}'"); 
 		expressoesECategorias.put(Categories.CTE_CAD_FL, "\\[(([-]?(\\d)*\\.\\d+)|[-]?\\d+\\.(\\d)*)(,(([-]?\\d+\\.(\\d)*)|([-]?(\\d)*\\.\\d+)))*\\]");	
 		expressoesECategorias.put(Categories.CTE_FLOAT, "((\\-)?\\d+\\.(\\d)*)|((\\-)?(\\d)*\\.\\d+)"); 
 		expressoesECategorias.put(Categories.CTE_CAD_IN, "\\[(\\-)?\\d+(,(\\-)?\\d+)*\\]"); 
@@ -41,13 +41,13 @@ public class TokenService {
 		expressoesECategorias.put(Categories.TIPO_BOOL, "boolean"); 
 		expressoesECategorias.put(Categories.TIPO_CHAR, "char"); 
 		expressoesECategorias.put(Categories.TIPO_VOID, "void"); 
-		expressoesECategorias.put(Categories.OP_CONC, "[ ]*\\+\\+[ ]*"); 
-		expressoesECategorias.put(Categories.OPA_AD, "[ ]*[+][ ]*"); 
-		expressoesECategorias.put(Categories.OPA_MULT, "[ ]*[*][ ]*"); 
+		expressoesECategorias.put(Categories.OP_CONC, "\\+\\+"); 
+		expressoesECategorias.put(Categories.OPA_AD, "[+]"); 
+		expressoesECategorias.put(Categories.OPA_MULT, "[*]"); 
 		expressoesECategorias.put(Categories.COMENTARIO, "//.*$"); 
-		expressoesECategorias.put(Categories.OPA_DIV, "[ ]*\\/[ ]*"); 
-		expressoesECategorias.put(Categories.OPL_OU, "[ ]*\\|[ ]*"); 
-		expressoesECategorias.put(Categories.OPL_E, "[ ]*[&][ ]*"); 
+		expressoesECategorias.put(Categories.OPA_DIV, "\\/"); 
+		expressoesECategorias.put(Categories.OPL_OU, "\\|"); 
+		expressoesECategorias.put(Categories.OPL_E, "[&]"); 
 		expressoesECategorias.put(Categories.OPL_NAO, "[!]");
 		expressoesECategorias.put(Categories.RETORNO, "return");
 		expressoesECategorias.put(Categories.SE, "if");
@@ -57,6 +57,11 @@ public class TokenService {
 		expressoesECategorias.put(Categories.ENTRADA, "read"); 
 		expressoesECategorias.put(Categories.SAIDA, "print"); 
 		expressoesECategorias.put(Categories.SAIDA_LN, "println");
+		expressoesECategorias.put(Categories.TK_ER_STR, "\"");
+		expressoesECategorias.put(Categories.TK_ER_CHST, "'[\\w|\\W]{2,}'");
+		expressoesECategorias.put(Categories.TK_ER_CH, "'");
+		
+		
 		
 		reservedWords.put("main", Categories.MAIN);
 		reservedWords.put("true", Categories.CTE_BOOL);
