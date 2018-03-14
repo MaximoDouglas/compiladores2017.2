@@ -48,5 +48,10 @@ public enum Categories {
     WHILE,
     ENTRADA, 
     SAIDA, 
-    SAIDA_LN
+    SAIDA_LN,
+    TK_ER_STR,
+    TK_ER_FLO,
+    TK_ER_INT,
+    TK_ER_CHAR,
+    TK_ER_NID
 }
