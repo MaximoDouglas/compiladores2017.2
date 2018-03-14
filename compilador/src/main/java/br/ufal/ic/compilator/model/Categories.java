@@ -21,7 +21,6 @@ public enum Categories {
     CTE_CAD_FL, 
     CTE_FLOAT, 
     CTE_CAD_IN, 
-    TK_ER_INT,
     CTE_INT,
     CTE_CAD_BO,
     CTE_BOOL,
@@ -53,6 +52,7 @@ public enum Categories {
     TK_ER_STR,
     TK_ER_CHST,
     TK_ER_CH,
+//    TK_ER_INT,
 //    TK_ER_FLO,
 //    TK_ER_NID
 }
