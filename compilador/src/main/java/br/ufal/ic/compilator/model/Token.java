@@ -136,22 +136,24 @@ public class Token {
 			stopPositionX = initialPositionX;
 		}
 
-		// //Testa se o token que vai ser retornado é o primeiro (lastTk ainda é null).
-		// Se for, verifica se ele começa no começo da linha, caso contrário, pode haver
+		// Testa se o token que vai ser retornado é o primeiro (lastTk ainda é null). Se
+		// for, verifica se ele começa no começo da linha, caso contrário, pode haver
 		// algo antes dele que não foi identificado.
-		// //Nesse caso, manda esse pedaço da linha para análise
-		// if (lastTk == null && firstTk.positionX > 0) {
-		// firstTk = lexicalErrorCollector(linha.substring(0, firstTk.positionX));
-		// } else if (firstTk == tempTK) { //Verifica se o firstTk não foi modificado.
-		// Caso não tenha sido (ainda é igual a antes das verificações) significa que
-		// nenhum token foi encontrado nessa passagem. Manda para análise o mesmo trecho
-		// de linha que recebeu.
-		// firstTk = lexicalErrorCollector(linha.substring(stopPositionX));
-		// } else { //Esse else serve apenas para modificar o stopPosition. Caso não
-		// ocorra problemas, ele modifica a posição adequadamente, como era feito antes
-		// dessas modificações.
-		// stopPositionX = finalPositionX;
-		// }
+		// Nesse caso, manda esse pedaço da linha para análise
+		if (lastTk == null && firstTk.positionX > 0) {
+			Token tempTk = notIdentifiedErrorCollector(linha.substring(0, firstTk.positionX));
+			if (tempTk != null) {
+				firstTk = tempTk;
+			}
+		} else if (firstTk == tempTK) { // Verifica se o firstTk não foi modificado. Caso não tenha sido (ainda é igual
+			// a antes das verificações) significa que nenhum token foi encontrado nessa
+			// passagem. Manda para análise o mesmo trecho de linha que recebeu.
+			firstTk = notIdentifiedErrorCollector(linha.substring(stopPositionX));
+		} else { // Esse else serve apenas para modificar o stopPosition. Caso não ocorra
+			// problemas, ele modifica a posição adequadamente, como era feito antes dessas
+			// modificações.
+			stopPositionX = finalPositionX;
+		}
 
 		stopPositionX = finalPositionX;
 		lastTk = firstTk;
@@ -159,15 +161,15 @@ public class Token {
 		if (firstTk.categorie == Categories.COMENTARIO) {
 			return nextToken();
 		}
-
+		
 		if (firstTk.categorie == Categories.TK_ER_STR || firstTk.categorie == Categories.TK_ER_CH) {
-			firstTk = lexicalErrorCollector(firstTk, linha.substring(firstTk.positionX + 1));
+			firstTk = characterErrorCollector(firstTk, linha.substring(firstTk.positionX + 1));
 		}
 
 		return firstTk;
 	}
 
-	private static Token lexicalErrorCollector(Token tk, String str) {
+	private static Token characterErrorCollector(Token tk, String str) {
 
 		if (tk.categorie == Categories.TK_ER_STR) {
 			tk.lexema += str;
@@ -181,6 +183,23 @@ public class Token {
 		}
 
 		return tk;
+	}
+
+	private static Token notIdentifiedErrorCollector(String str) {
+
+		String tempStr = str.trim();
+		
+		if (tempStr.length() > 0) {
+			Token tk = new Token(stopPositionX);
+			tk.categorie = Categories.TK_ER_NID;
+			tk.categorieNumber = tk.categorie.ordinal();
+			stopPositionX += str.length();
+			tk.lexema = str.trim();
+
+			return tk;
+		}
+
+		return null;
 	}
 
 	private static Token regexChecker(String theRegex, String theString) {

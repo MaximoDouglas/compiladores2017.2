@@ -58,10 +58,7 @@ public class TokenService {
 		expressoesECategorias.put(Categories.SAIDA, "print"); 
 		expressoesECategorias.put(Categories.SAIDA_LN, "println");
 		expressoesECategorias.put(Categories.TK_ER_STR, "\"");
-		//expressoesECategorias.put(Categories.TK_ER_CHST, "'[\\w|\\W]{2,}'");
-		expressoesECategorias.put(Categories.TK_ER_CH, "'");
-		
-		
+		expressoesECategorias.put(Categories.TK_ER_CH, "'");	
 		
 		reservedWords.put("main", Categories.MAIN);
 		reservedWords.put("true", Categories.CTE_BOOL);

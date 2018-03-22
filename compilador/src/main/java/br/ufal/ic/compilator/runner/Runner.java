@@ -22,6 +22,7 @@ public class Runner {
 	}
 
 	private static void arquivoBuild(String[] args) {
+		
 		if (args.length > 0) {
 			File file = new File(args[0]);
 			BufferedReader reader = null;
