@@ -50,7 +50,7 @@ public enum Categories {
     SAIDA, 
     SAIDA_LN,
     TK_ER_STR,
-    TK_ER_CHST,
+    //TK_ER_CHST,
     TK_ER_CH,
 //    TK_ER_INT,
 //    TK_ER_FLO,
