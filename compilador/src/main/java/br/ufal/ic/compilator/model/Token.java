@@ -141,21 +141,26 @@ public class Token {
 		// algo antes dele que não foi identificado.
 		// Nesse caso, manda esse pedaço da linha para análise
 		if (lastTk == null && firstTk.positionX > 0) {
-			Token tempTk = notIdentifiedErrorCollector(linha.substring(0, firstTk.positionX));
-			if (tempTk != null) {
-				firstTk = tempTk;
+			
+			System.out.println("aqui" + linha.substring(0, firstTk.positionX));
+			Token testTk = notIdentifiedErrorCollector(linha.substring(0, firstTk.positionX));
+			if (testTk != null) {
+				firstTk = testTk;
 			}
 		} else if (firstTk == tempTK) { // Verifica se o firstTk não foi modificado. Caso não tenha sido (ainda é igual
 			// a antes das verificações) significa que nenhum token foi encontrado nessa
 			// passagem. Manda para análise o mesmo trecho de linha que recebeu.
 			firstTk = notIdentifiedErrorCollector(linha.substring(stopPositionX));
+		} else if (firstTk.positionX > stopPositionX) { // Verifica se o firstTk não foi modificado. Caso não tenha sido (ainda é igual
+			System.out.println("Aqui");
+			firstTk = notIdentifiedErrorCollector(linha.substring(stopPositionX, firstTk.positionX));
 		} else { // Esse else serve apenas para modificar o stopPosition. Caso não ocorra
 			// problemas, ele modifica a posição adequadamente, como era feito antes dessas
 			// modificações.
 			stopPositionX = finalPositionX;
 		}
 
-		stopPositionX = finalPositionX;
+		//stopPositionX = finalPositionX;
 		lastTk = firstTk;
 
 		if (firstTk.categorie == Categories.COMENTARIO) {
@@ -186,16 +191,14 @@ public class Token {
 	}
 
 	private static Token notIdentifiedErrorCollector(String str) {
-
 		String tempStr = str.trim();
-		
 		if (tempStr.length() > 0) {
-			Token tk = new Token(stopPositionX);
+			Token tk = new Token(stopPositionX + getSpaces(str));
 			tk.categorie = Categories.TK_ER_NID;
 			tk.categorieNumber = tk.categorie.ordinal();
 			stopPositionX += str.length();
 			tk.lexema = str.trim();
-
+			tk.positionY = stopPositionY;
 			return tk;
 		}
 
