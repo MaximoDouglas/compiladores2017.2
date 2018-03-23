@@ -2,7 +2,6 @@ package br.ufal.ic.compilator.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import br.ufal.ic.compilator.runner.Runner;
 
 public class Token {
 
@@ -45,23 +44,23 @@ public class Token {
 	}
 
 	public static Token nextToken() {
-		String linha = Runner.getNextLine(stopPositionY);
+		String linha = Lexer.getLine(stopPositionY);
 		int spaces;
 
 		while (linha.trim().equals("")) {
 			stopPositionY++;
-			linha = Runner.getNextLine(stopPositionY);
+			linha = Lexer.getLine(stopPositionY);
 		}
 		linha = removeFinalSpaces(linha);
 		spaces = getSpaces(linha);
 
-		while (stopPositionX >= linha.length() && stopPositionY < Runner.getLines() - 1) {
+		while (stopPositionX >= linha.length() && stopPositionY < Lexer.getNumberOfLines() - 1) {
 			stopPositionY++;
-			linha = Runner.getNextLine(stopPositionY);
+			linha = Lexer.getLine(stopPositionY);
 
-			while (linha.trim().equals("") && stopPositionY < Runner.getLines() - 1) {
+			while (linha.trim().equals("") && stopPositionY < Lexer.getNumberOfLines() - 1) {
 				stopPositionY++;
-				linha = Runner.getNextLine(stopPositionY);
+				linha = Lexer.getLine(stopPositionY);
 			}
 
 			linha = removeFinalSpaces(linha);
@@ -70,7 +69,7 @@ public class Token {
 
 		}
 
-		if (stopPositionX >= linha.length() && stopPositionY == Runner.getLines() - 1) {
+		if (stopPositionX >= linha.length() && stopPositionY == Lexer.getNumberOfLines() - 1) {
 			return null;
 		}
 
@@ -194,7 +193,7 @@ public class Token {
 	public String toString() {
 		String string = "[" + String.format("%03d", this.positionY + 1) + ", "
 				+ String.format("%03d", this.positionX + 1) + "] (" + String.format("%04d", this.categorieNumber) + ", "
-				+ this.categorie.name() + ") {" + this.lexema + "}";
+				+ String.format("%1$10s", this.categorie.name()) + ") {" + this.lexema + "}";
 
 		if(this.categorie == Categories.TK_ER_CH) {
 			string += ". Erro: ' esperado na posição [" + String.format("%03d", this.positionY + 1) + ", " + String.format("%03d", this.positionX + this.lexema.length() + 1) + "]";
