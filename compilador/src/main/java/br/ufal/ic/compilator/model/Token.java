@@ -268,11 +268,19 @@ public class Token {
 				+ String.format("%03d", this.positionX + 1) + "] (" + String.format("%04d", this.categorieNumber) + ", "
 				+ this.categorie.name() + ") {" + this.lexema + "}";
 
+		if(this.categorie == Categories.TK_ER_CH) {
+			string += ". Erro: ' esperado na posição [" + String.format("%03d", this.positionY + 1) + ", " + String.format("%03d", this.positionX + this.lexema.length() + 1) + "]";
+		} else if(this.categorie == Categories.TK_ER_STR) {
+			string += ". Erro: \" esperado na posição [" + String.format("%03d", this.positionY + 1) + ", " + String.format("%03d", this.positionX + this.lexema.length() + 1) + "]";
+		} else if(this.categorie == Categories.TK_ER_NID) {
+			string += ". Erro: Token desconhecido.";
+		}
+		
 		return string;
 	}
 	
-	public Categories getCategorie() {
-		return this.categorie;
+	public void makeError() {
+		
 	}
 
 }

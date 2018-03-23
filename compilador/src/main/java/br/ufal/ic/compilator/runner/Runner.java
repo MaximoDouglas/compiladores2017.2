@@ -57,17 +57,6 @@ public class Runner {
 		while(tk != null) {
 			System.out.println(tk.toString());
 			tk = Token.nextToken();
-			
-			if (tk.getCategorie() == Categories.TK_ER_CH) {
-				
-			} else if () {
-				
-			} else if () {
-				
-			} else if () {
-				
-			}
-			
 		}
 	}
 
