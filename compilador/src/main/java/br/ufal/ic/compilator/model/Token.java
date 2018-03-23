@@ -1,7 +1,5 @@
 package br.ufal.ic.compilator.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -72,7 +70,13 @@ public class Token {
 			linha = removeFinalSpaces(linha);
 			spaces = getSpaces(linha);
 			stopPositionX = spaces;
-			System.out.println("---------------------------------------------"); // pra ficar mais claro os tokens por
+			System.out.println("---------------------------------------------"); // pra
+			// ficar
+			// mais
+			// claro
+			// os
+			// tokens
+			// por
 			// linha
 		}
 
@@ -106,20 +110,20 @@ public class Token {
 
 				if ((stopPositionX == 1 && tk.categorie == Categories.OPA_SUB)
 						|| (lastTk != null && tk.categorie == Categories.OPA_SUB
-						&& (lastTk.categorie == Categories.AB_PARENTE
-						|| lastTk.categorie == Categories.ATRIBUICAO
-						|| lastTk.categorie == Categories.AB_COLCHET))) {
+								&& (lastTk.categorie == Categories.AB_PARENTE
+										|| lastTk.categorie == Categories.ATRIBUICAO
+										|| lastTk.categorie == Categories.AB_COLCHET))) {
 					tk.lexema = "-";
 					tk.categorie = Categories.OPA_NEGA;
 				}
 
 				if (tk.categorie != Categories.OPA_NEGA
 						&& (lastTk != null && tk.categorie == Categories.CTE_INT
-						&& (lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.ID)
-						&& tk.positionY == lastTk.positionY)
+								&& (lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.ID)
+								&& tk.positionY == lastTk.positionY)
 						|| (lastTk != null && tk.categorie == Categories.CTE_FLOAT
-						&& (lastTk.categorie == Categories.CTE_FLOAT || lastTk.categorie == Categories.ID)
-						&& tk.positionY == lastTk.positionY)) {
+								&& (lastTk.categorie == Categories.CTE_FLOAT || lastTk.categorie == Categories.ID)
+								&& tk.positionY == lastTk.positionY)) {
 					tk.categorie = Categories.OPA_SUB;
 					tk.lexema = "-";
 					stopPositionX = tk.positionX + 1;
@@ -136,37 +140,70 @@ public class Token {
 			stopPositionX = initialPositionX;
 		}
 
-		// Testa se o token que vai ser retornado é o primeiro (lastTk ainda é null). Se
-		// for, verifica se ele começa no começo da linha, caso contrário, pode haver
+		// Testa se o token que vai ser retornado é o primeiro (lastTk ainda é
+		// null). Se
+		// for, verifica se ele começa no começo da linha, caso contrário,
+		// pode haver
 		// algo antes dele que não foi identificado.
 		// Nesse caso, manda esse pedaço da linha para análise
-		if (lastTk == null && firstTk.positionX > 0) {
-			
-			System.out.println("aqui" + linha.substring(0, firstTk.positionX));
-			Token testTk = notIdentifiedErrorCollector(linha.substring(0, firstTk.positionX));
-			if (testTk != null) {
-				firstTk = testTk;
-			}
-		} else if (firstTk == tempTK) { // Verifica se o firstTk não foi modificado. Caso não tenha sido (ainda é igual
-			// a antes das verificações) significa que nenhum token foi encontrado nessa
-			// passagem. Manda para análise o mesmo trecho de linha que recebeu.
-			firstTk = notIdentifiedErrorCollector(linha.substring(stopPositionX));
-		} else if (firstTk.positionX > stopPositionX) { // Verifica se o firstTk não foi modificado. Caso não tenha sido (ainda é igual
-			System.out.println("Aqui");
-			firstTk = notIdentifiedErrorCollector(linha.substring(stopPositionX, firstTk.positionX));
-		} else { // Esse else serve apenas para modificar o stopPosition. Caso não ocorra
-			// problemas, ele modifica a posição adequadamente, como era feito antes dessas
-			// modificações.
-			stopPositionX = finalPositionX;
-		}
+		// if (lastTk == null && firstTk.positionX > 0) {
+		//
+		// Token testTk = notIdentifiedErrorCollector(linha.substring(0,
+		// firstTk.positionX));
+		// if (testTk != null) {
+		// firstTk = testTk;
+		// }
+		// } else if (firstTk == tempTK) {
+		// // Verifica se o firstTk não foi
+		// // modificado. Caso não tenha sido
+		// // (ainda é igual
+		// // a antes das verificações) significa que nenhum token foi
+		// // encontrado nessa
+		// // passagem. Manda para análise o mesmo trecho de linha que
+		// // recebeu.
+		// firstTk =
+		// notIdentifiedErrorCollector(linha.substring(stopPositionX));
+		// } else if (firstTk.positionX > stopPositionX) {
+		// // Verifica se o firstTk
+		// // não foi modificado.
+		// // Caso não tenha sido
+		// // (ainda é igual
+		// // System.out.println("Aqui");
+		// firstTk = notIdentifiedErrorCollector(linha.substring(stopPositionX,
+		// firstTk.positionX));
+		// } else {
+		// // Esse else serve apenas para modificar o stopPosition. Caso
+		// // não ocorra
+		// // problemas, ele modifica a posição adequadamente, como era feito
+		// // antes dessas
+		// // modificações.
+		// stopPositionX = finalPositionX;
+		// }
 
-		//stopPositionX = finalPositionX;
+		stopPositionX = finalPositionX;
 		lastTk = firstTk;
 
 		if (firstTk.categorie == Categories.COMENTARIO) {
 			return nextToken();
 		}
-		
+
+		if (firstTk.categorie == Categories.CTE_CAD_CH) {
+			String auxStr = firstTk.lexema;
+			for (int i = 1; i < auxStr.length(); i++) {
+				if (auxStr.charAt(i) == '"' && auxStr.charAt(i - 1) != '\\') {
+					stopPositionX -= auxStr.length() - i;
+					firstTk.lexema = auxStr.substring(0, i);
+					break;
+				}
+			}
+		}
+
+//		if (firstTk.categorie == Categories.CTE_CHAR) {
+//			char auxChar = firstTk.lexema.charAt(0);
+//			
+//			if (auxChar == '"' && auxStr.charAt(i - 1) != '\\')
+//		}
+
 		if (firstTk.categorie == Categories.TK_ER_STR || firstTk.categorie == Categories.TK_ER_CH) {
 			firstTk = characterErrorCollector(firstTk, linha.substring(firstTk.positionX + 1));
 		}

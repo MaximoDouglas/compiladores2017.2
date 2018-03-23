@@ -24,7 +24,8 @@ public class TokenService {
 		expressoesECategorias.put(Categories.OPR_MAI, "[>]"); 
 		expressoesECategorias.put(Categories.OPR_IGUAL, "==");
 		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]"); 
-		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"[^\"]*\")|(\\['\\w'([,]'\\w')*\\])"); 
+		//expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"([^\"]*)\")|(\\['\\w'([,]'\\w')*\\])");
+		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"[^\\r\\n]*\")|(\\['\\[^\\r\\n]'([,]'\\[^\\r\\n]')*\\])");
 		expressoesECategorias.put(Categories.CTE_CHAR, "'[^\\r\\n]{0,1}'"); 
 		expressoesECategorias.put(Categories.CTE_CAD_FL, "\\[(([-]?(\\d)*\\.\\d+)|[-]?\\d+\\.(\\d)*)(,(([-]?\\d+\\.(\\d)*)|([-]?(\\d)*\\.\\d+)))*\\]");	
 		expressoesECategorias.put(Categories.CTE_FLOAT, "((\\-)?\\d+\\.(\\d)*)|((\\-)?(\\d)*\\.\\d+)"); 
@@ -58,7 +59,8 @@ public class TokenService {
 		expressoesECategorias.put(Categories.SAIDA, "print"); 
 		expressoesECategorias.put(Categories.SAIDA_LN, "println");
 		expressoesECategorias.put(Categories.TK_ER_STR, "\"");
-		expressoesECategorias.put(Categories.TK_ER_CH, "'");	
+		expressoesECategorias.put(Categories.TK_ER_CH, "'");
+		expressoesECategorias.put(Categories.TK_ER_NID, "\\S");
 		
 		reservedWords.put("main", Categories.MAIN);
 		reservedWords.put("true", Categories.CTE_BOOL);
