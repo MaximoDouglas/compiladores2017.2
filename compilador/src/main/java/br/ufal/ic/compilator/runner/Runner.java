@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import br.ufal.ic.compilator.model.Categories;
 import br.ufal.ic.compilator.model.Token;
 import br.ufal.ic.compilator.model.TokenService;
 

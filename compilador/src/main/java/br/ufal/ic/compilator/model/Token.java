@@ -70,14 +70,7 @@ public class Token {
 			linha = removeFinalSpaces(linha);
 			spaces = getSpaces(linha);
 			stopPositionX = spaces;
-			System.out.println("---------------------------------------------"); // pra
-			// ficar
-			// mais
-			// claro
-			// os
-			// tokens
-			// por
-			// linha
+
 		}
 
 		if (stopPositionX >= linha.length() && stopPositionY == Runner.getLines() - 1) {
@@ -88,7 +81,6 @@ public class Token {
 		int finalPositionX = stopPositionX;
 
 		Token firstTk = new Token(linha.length());
-		Token tempTK = firstTk;
 
 		for (int i = 0; i < TokenService.getExpressoes().size(); i++) {
 			Token tk = regexChecker(TokenService.getExpressoes().get(Categories.values()[i]),
@@ -140,46 +132,6 @@ public class Token {
 			stopPositionX = initialPositionX;
 		}
 
-		// Testa se o token que vai ser retornado é o primeiro (lastTk ainda é
-		// null). Se
-		// for, verifica se ele começa no começo da linha, caso contrário,
-		// pode haver
-		// algo antes dele que não foi identificado.
-		// Nesse caso, manda esse pedaço da linha para análise
-		// if (lastTk == null && firstTk.positionX > 0) {
-		//
-		// Token testTk = notIdentifiedErrorCollector(linha.substring(0,
-		// firstTk.positionX));
-		// if (testTk != null) {
-		// firstTk = testTk;
-		// }
-		// } else if (firstTk == tempTK) {
-		// // Verifica se o firstTk não foi
-		// // modificado. Caso não tenha sido
-		// // (ainda é igual
-		// // a antes das verificações) significa que nenhum token foi
-		// // encontrado nessa
-		// // passagem. Manda para análise o mesmo trecho de linha que
-		// // recebeu.
-		// firstTk =
-		// notIdentifiedErrorCollector(linha.substring(stopPositionX));
-		// } else if (firstTk.positionX > stopPositionX) {
-		// // Verifica se o firstTk
-		// // não foi modificado.
-		// // Caso não tenha sido
-		// // (ainda é igual
-		// // System.out.println("Aqui");
-		// firstTk = notIdentifiedErrorCollector(linha.substring(stopPositionX,
-		// firstTk.positionX));
-		// } else {
-		// // Esse else serve apenas para modificar o stopPosition. Caso
-		// // não ocorra
-		// // problemas, ele modifica a posição adequadamente, como era feito
-		// // antes dessas
-		// // modificações.
-		// stopPositionX = finalPositionX;
-		// }
-
 		stopPositionX = finalPositionX;
 		lastTk = firstTk;
 
@@ -197,12 +149,6 @@ public class Token {
 				}
 			}
 		}
-
-//		if (firstTk.categorie == Categories.CTE_CHAR) {
-//			char auxChar = firstTk.lexema.charAt(0);
-//			
-//			if (auxChar == '"' && auxStr.charAt(i - 1) != '\\')
-//		}
 
 		if (firstTk.categorie == Categories.TK_ER_STR || firstTk.categorie == Categories.TK_ER_CH) {
 			firstTk = characterErrorCollector(firstTk, linha.substring(firstTk.positionX + 1));
@@ -225,21 +171,6 @@ public class Token {
 		}
 
 		return tk;
-	}
-
-	private static Token notIdentifiedErrorCollector(String str) {
-		String tempStr = str.trim();
-		if (tempStr.length() > 0) {
-			Token tk = new Token(stopPositionX + getSpaces(str));
-			tk.categorie = Categories.TK_ER_NID;
-			tk.categorieNumber = tk.categorie.ordinal();
-			stopPositionX += str.length();
-			tk.lexema = str.trim();
-			tk.positionY = stopPositionY;
-			return tk;
-		}
-
-		return null;
 	}
 
 	private static Token regexChecker(String theRegex, String theString) {
@@ -277,10 +208,6 @@ public class Token {
 		}
 		
 		return string;
-	}
-	
-	public void makeError() {
-		
 	}
 
 }
