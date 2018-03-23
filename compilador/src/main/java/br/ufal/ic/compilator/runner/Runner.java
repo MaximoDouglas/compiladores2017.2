@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import br.ufal.ic.compilator.model.Categories;
 import br.ufal.ic.compilator.model.Token;
 import br.ufal.ic.compilator.model.TokenService;
 
@@ -18,7 +19,7 @@ public class Runner {
 
 		arquivoBuild(args);
 
-		getNextToken();
+		getTokens();
 	}
 
 	private static void arquivoBuild(String[] args) {
@@ -50,12 +51,23 @@ public class Runner {
 
 	}
 
-	private static void getNextToken() {
+	private static void getTokens() {
 		Token tk = Token.nextToken();
 		
 		while(tk != null) {
 			System.out.println(tk.toString());
 			tk = Token.nextToken();
+			
+			if (tk.getCategorie() == Categories.TK_ER_CH) {
+				
+			} else if () {
+				
+			} else if () {
+				
+			} else if () {
+				
+			}
+			
 		}
 	}
 

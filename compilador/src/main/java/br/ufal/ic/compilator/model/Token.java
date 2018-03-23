@@ -270,5 +270,9 @@ public class Token {
 
 		return string;
 	}
+	
+	public Categories getCategorie() {
+		return this.categorie;
+	}
 
 }
