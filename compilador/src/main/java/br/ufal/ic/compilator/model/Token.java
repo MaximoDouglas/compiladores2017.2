@@ -2,7 +2,6 @@ package br.ufal.ic.compilator.model;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import br.ufal.ic.compilator.runner.Runner;
 
 public class Token {
@@ -23,7 +22,6 @@ public class Token {
 		this.positionX = positionX;
 	}
 
-	// Conta espaços em branco no começo da linha
 	public static int getSpaces(String str) {
 		int i = 0, count = 0;
 		while (str.length() != 0 && str.charAt(i) == ' ') {
@@ -33,7 +31,6 @@ public class Token {
 		return count;
 	}
 
-	// Remove espaços em branco no final da linha
 	public static String removeFinalSpaces(String str) {
 		if (str == null)
 			return null;
@@ -82,8 +79,8 @@ public class Token {
 
 		Token firstTk = new Token(linha.length());
 
-		for (int i = 0; i < TokenService.getExpressoes().size(); i++) {
-			Token tk = regexChecker(TokenService.getExpressoes().get(Categories.values()[i]),
+		for (int i = 0; i < TokenService.getExpressions().size(); i++) {
+			Token tk = regexChecker(TokenService.getExpressions().get(Categories.values()[i]),
 					linha.substring(stopPositionX));
 
 			if (tk != null) {

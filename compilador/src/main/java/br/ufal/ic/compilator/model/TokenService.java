@@ -5,10 +5,11 @@ import java.util.Map;
 
 public class TokenService {
 
+	
 	private static Map<Categories, String> expressoesECategorias = new HashMap<Categories, String>();
 	private static Map<String, Categories> reservedWords = new HashMap<String, Categories>();
 
-	public static void fillExpressoes () {
+	public static void fillExpressions () {
 		expressoesECategorias.put(Categories.ID, "[a-zA-Z_][a-zA-Z0-9_]{0,30}");
 		expressoesECategorias.put(Categories.MAIN, "main");
 		expressoesECategorias.put(Categories.PONT_VIRG, "[;]"); 
@@ -23,8 +24,7 @@ public class TokenService {
 		expressoesECategorias.put(Categories.OPR_MAI_IG, ">="); 
 		expressoesECategorias.put(Categories.OPR_MAI, "[>]"); 
 		expressoesECategorias.put(Categories.OPR_IGUAL, "==");
-		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]"); 
-		//expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"([^\"]*)\")|(\\['\\w'([,]'\\w')*\\])");
+		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]");
 		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"\")|(\"[^\\r\\n]*\")|(\\['\\[^\\r\\n]'([,]'\\[^\\r\\n]')*\\])");
 		expressoesECategorias.put(Categories.CTE_CHAR, "('\\\\'')|('[^\\r\\n]{0,1}')"); 
 		expressoesECategorias.put(Categories.CTE_CAD_FL, "\\[(([-]?(\\d)*\\.\\d+)|[-]?\\d+\\.(\\d)*)(,(([-]?\\d+\\.(\\d)*)|([-]?(\\d)*\\.\\d+)))*\\]");	
@@ -80,7 +80,7 @@ public class TokenService {
 		reservedWords.put("if", Categories.SE);
 	}
 
-	public static Map<Categories, String> getExpressoes(){
+	public static Map<Categories, String> getExpressions(){
 		return expressoesECategorias;
 	}
 	

@@ -14,14 +14,16 @@ public class Runner {
 	private static ArrayList<String> arquivo = new ArrayList<String>();
 
 	public static void main(String[] args) throws IOException{
-		TokenService.fillExpressoes();
+		TokenService.fillExpressions();
 
-		arquivoBuild(args);
+		if (!arquivoBuild(args)) {
+			return;
+		}
 
-		getTokens();
+		getNextToken();
 	}
 
-	private static void arquivoBuild(String[] args) {
+	private static boolean arquivoBuild(String[] args) {
 		
 		if (args.length > 0) {
 			File file = new File(args[0]);
@@ -48,9 +50,20 @@ public class Runner {
 			System.out.println("Nenhum arquivo passado.");
 		}
 
+		int i = 0;
+		while (arquivo.get(i).trim().equals("")) {
+			i++;
+		}
+		
+		if (i == 0) {
+			System.out.println("Arquivo vazio");
+			return false;
+		}
+		
+		return true;
 	}
 
-	private static void getTokens() {
+	private static void getNextToken() {
 		Token tk = Token.nextToken();
 		
 		while(tk != null) {
