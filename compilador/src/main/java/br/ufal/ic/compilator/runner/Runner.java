@@ -16,14 +16,12 @@ public class Runner {
 	public static void main(String[] args) throws IOException{
 		TokenService.fillExpressions();
 
-		if (!arquivoBuild(args)) {
-			return;
-		}
+		arquivoBuild(args);
 
 		getNextToken();
 	}
 
-	private static boolean arquivoBuild(String[] args) {
+	private static void arquivoBuild(String[] args) {
 		
 		if (args.length > 0) {
 			File file = new File(args[0]);
@@ -49,18 +47,6 @@ public class Runner {
 		} else {
 			System.out.println("Nenhum arquivo passado.");
 		}
-
-		int i = 0;
-		while (arquivo.get(i).trim().equals("")) {
-			i++;
-		}
-		
-		if (i == 0) {
-			System.out.println("Arquivo vazio");
-			return false;
-		}
-		
-		return true;
 	}
 
 	private static void getNextToken() {
