@@ -6,12 +6,17 @@ import br.ufal.ic.compilator.model.Token;
 public class Runner {
 
 	public static void main(String[] args){
-
 		if (args.length > 0) {
 			Lexer lexer = new Lexer(args[0]);
+			
+			if(lexer.isEmpty()) {
+				System.out.println("Arquivo vazio!");
+				return;
+			}
+			
 			getTokens(lexer);
 		} else {
-			System.out.println("Nenhum arquivo passado.");
+			System.out.println("Nenhum arquivo passado!");
 		}
 		
 	}

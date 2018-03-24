@@ -5,26 +5,35 @@ import java.util.regex.Pattern;
 
 public class Token {
 
-	private static int stopPositionY = 0;
-	private static int stopPositionX = 0;
+	private static int stopLineIndex = 0;
+	private static int stopColIndex = 0;
 	private static Token lastTk = null;
 
-	private int positionX;
-	private int positionY;
+	private int lineIndex;
+	private int colIndex;
 
 	private Categories categorie;
 	private int categorieNumber;
 
 	private String lexema;
 
-	private Token(int positionX) {
-		this.positionX = positionX;
+	private static int tabAux = 0;
+
+	private Token(int colIndex) {
+		this.colIndex = colIndex;
 	}
 
 	public static int getSpaces(String str) {
 		int i = 0, count = 0;
-		while (str.length() != 0 && str.charAt(i) == ' ') {
-			count++;
+		while (str.length() != 0) {
+			if(str.charAt(i) == ' ') {
+				count++;
+			} else if(str.charAt(i) == '\t') {
+				count++;
+				tabAux += 3;
+			} else {
+				break;
+			}
 			i++;
 		}
 		return count;
@@ -44,43 +53,46 @@ public class Token {
 	}
 
 	public static Token nextToken() {
-		String linha = Lexer.getLine(stopPositionY);
+		String line = Lexer.getLine(stopLineIndex);
 		int spaces;
+		tabAux = 0;
 
-		while (linha.trim().equals("")) {
-			stopPositionY++;
-			linha = Lexer.getLine(stopPositionY);
+		while (line.trim().equals("")) {
+			stopLineIndex++;
+			line = Lexer.getLine(stopLineIndex);
 		}
-		linha = removeFinalSpaces(linha);
-		spaces = getSpaces(linha);
+		line = removeFinalSpaces(line);
+		spaces = getSpaces(line);
 
-		while (stopPositionX >= linha.length() && stopPositionY < Lexer.getNumberOfLines() - 1) {
-			stopPositionY++;
-			linha = Lexer.getLine(stopPositionY);
+		while (stopColIndex >= line.length() && stopLineIndex < Lexer.getNumberOfLines() - 1) {
+			stopLineIndex++;
+			tabAux = 0;
+			line = Lexer.getLine(stopLineIndex);
 
-			while (linha.trim().equals("") && stopPositionY < Lexer.getNumberOfLines() - 1) {
-				stopPositionY++;
-				linha = Lexer.getLine(stopPositionY);
+			while (line.trim().equals("") && stopLineIndex < Lexer.getNumberOfLines() - 1) {
+				stopLineIndex++;
+				tabAux = 0;
+				line = Lexer.getLine(stopLineIndex);
 			}
 
-			linha = removeFinalSpaces(linha);
-			spaces = getSpaces(linha);
-			stopPositionX = spaces;
+			line = removeFinalSpaces(line);
+			spaces = getSpaces(line);
+			stopColIndex = spaces;
 
 		}
 
-		if (stopPositionX >= linha.length() && stopPositionY == Lexer.getNumberOfLines() - 1) {
+		if (stopColIndex >= line.length() && stopLineIndex == Lexer.getNumberOfLines() - 1) {
 			return null;
 		}
 
-		int initialPositionX = stopPositionX;
-		int finalPositionX = stopPositionX;
+		int initialcolIndex = stopColIndex;
+		int finalcolIndex = stopColIndex;
 
-		Token firstTk = new Token(linha.length());
+		Token firstTk = new Token(line.length());
 
 		for (int i = 0; i < TokenService.getExpressions().size(); i++) {
 			Token tk = regexChecker(TokenService.getExpressions().get(Categories.values()[i]),
-					linha.substring(stopPositionX));
+					line.substring(stopColIndex));
 
 			if (tk != null) {
 				if (TokenService.getReserved().containsKey(tk.lexema)) {
@@ -89,46 +101,46 @@ public class Token {
 					tk.categorie = Categories.values()[i];
 				}
 
-				tk.positionY = stopPositionY;
+				tk.lineIndex = stopLineIndex;
 
 				if ((tk.categorie == Categories.CTE_CAD_CH && tk.lexema.charAt(0) == '"')
 						|| tk.categorie == Categories.CTE_CHAR) {
 					tk.lexema = tk.lexema.substring(1, tk.lexema.length() - 1);
 				}
 
-				if ((stopPositionX == 1 && tk.categorie == Categories.OPA_SUB)
+				if ((stopColIndex == 1 && tk.categorie == Categories.OPA_SUB)
 						|| (lastTk != null && tk.categorie == Categories.OPA_SUB
-								&& (lastTk.categorie == Categories.AB_PARENTE
-										|| lastTk.categorie == Categories.ATRIBUICAO
-										|| lastTk.categorie == Categories.AB_COLCHET))) {
+						&& (lastTk.categorie == Categories.AB_PARENTE
+						|| lastTk.categorie == Categories.ATRIBUICAO
+						|| lastTk.categorie == Categories.AB_COLCHET))) {
 					tk.lexema = "-";
 					tk.categorie = Categories.OPA_NEGA;
 				}
 
 				if (tk.categorie != Categories.OPA_NEGA
 						&& (lastTk != null && tk.categorie == Categories.CTE_INT
-								&& (lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.ID)
-								&& tk.positionY == lastTk.positionY)
+						&& (lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.ID)
+						&& tk.lineIndex == lastTk.lineIndex)
 						|| (lastTk != null && tk.categorie == Categories.CTE_FLOAT
-								&& (lastTk.categorie == Categories.CTE_FLOAT || lastTk.categorie == Categories.ID)
-								&& tk.positionY == lastTk.positionY)) {
+						&& (lastTk.categorie == Categories.CTE_FLOAT || lastTk.categorie == Categories.ID)
+						&& tk.lineIndex == lastTk.lineIndex)) {
 					tk.categorie = Categories.OPA_SUB;
 					tk.lexema = "-";
-					stopPositionX = tk.positionX + 1;
+					stopColIndex = tk.colIndex + 1;
 				}
 
 				tk.categorieNumber = tk.categorie.ordinal();
 
-				if (tk.positionX < firstTk.positionX) {
+				if (tk.colIndex < firstTk.colIndex) {
 					firstTk = tk;
-					finalPositionX = stopPositionX;
+					finalcolIndex = stopColIndex;
 				}
 			}
 
-			stopPositionX = initialPositionX;
+			stopColIndex = initialcolIndex;
 		}
 
-		stopPositionX = finalPositionX;
+		stopColIndex = finalcolIndex;
 		lastTk = firstTk;
 
 		if (firstTk.categorie == Categories.COMENTARIO) {
@@ -139,7 +151,7 @@ public class Token {
 			String auxStr = firstTk.lexema;
 			for (int i = 1; i < auxStr.length(); i++) {
 				if (auxStr.charAt(i) == '"' && auxStr.charAt(i - 1) != '\\') {
-					stopPositionX -= auxStr.length() - i;
+					stopColIndex -= auxStr.length() - i;
 					firstTk.lexema = auxStr.substring(0, i);
 					break;
 				}
@@ -147,9 +159,10 @@ public class Token {
 		}
 
 		if (firstTk.categorie == Categories.TK_ER_STR || firstTk.categorie == Categories.TK_ER_CH) {
-			firstTk = characterErrorCollector(firstTk, linha.substring(firstTk.positionX + 1));
+			firstTk = characterErrorCollector(firstTk, line.substring(firstTk.colIndex + 1));
 		}
 
+		firstTk.colIndex += tabAux;
 		return firstTk;
 	}
 
@@ -157,13 +170,13 @@ public class Token {
 
 		if (tk.categorie == Categories.TK_ER_STR) {
 			tk.lexema += str;
-			stopPositionX += str.length();
+			stopColIndex += str.length();
 		}
 
 		if (tk.categorie == Categories.TK_ER_CH && str.length() >= 1) {
 
 			tk.lexema += str.charAt(0);
-			stopPositionX += 1;
+			stopColIndex += 1;
 		}
 
 		return tk;
@@ -178,12 +191,12 @@ public class Token {
 
 		if (regexMatcher.find()) {
 			lexema = regexMatcher.group();
-			posX = regexMatcher.start() + stopPositionX;
+			posX = regexMatcher.start() + stopColIndex;
 
 			Token tk = new Token(posX);
 			tk.lexema = lexema;
 
-			stopPositionX = stopPositionX + regexMatcher.end();
+			stopColIndex = stopColIndex + regexMatcher.end();
 			return tk;
 		}
 
@@ -191,18 +204,18 @@ public class Token {
 	}
 
 	public String toString() {
-		String string = "[" + String.format("%03d", this.positionY + 1) + ", "
-				+ String.format("%03d", this.positionX + 1) + "] (" + String.format("%04d", this.categorieNumber) + ", "
+		String string = "[" + String.format("%03d", this.lineIndex + 1) + ", "
+				+ String.format("%03d", this.colIndex + 1) + "] (" + String.format("%04d", this.categorieNumber) + ", "
 				+ String.format("%1$10s", this.categorie.name()) + ") {" + this.lexema + "}";
 
 		if(this.categorie == Categories.TK_ER_CH) {
-			string += ". Erro: ' esperado na posição [" + String.format("%03d", this.positionY + 1) + ", " + String.format("%03d", this.positionX + this.lexema.length() + 1) + "]";
+			string += ". Erro: ' esperado na posição [" + String.format("%03d", this.lineIndex + 1) + ", " + String.format("%03d", this.colIndex + this.lexema.length() + 1) + "]";
 		} else if(this.categorie == Categories.TK_ER_STR) {
-			string += ". Erro: \" esperado na posição [" + String.format("%03d", this.positionY + 1) + ", " + String.format("%03d", this.positionX + this.lexema.length() + 1) + "]";
+			string += ". Erro: \" esperado na posição [" + String.format("%03d", this.lineIndex + 1) + ", " + String.format("%03d", this.colIndex + this.lexema.length() + 1) + "]";
 		} else if(this.categorie == Categories.TK_ER_NID) {
 			string += ". Erro: Token desconhecido.";
 		}
-		
+
 		return string;
 	}
 

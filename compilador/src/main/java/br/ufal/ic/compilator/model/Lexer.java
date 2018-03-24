@@ -9,11 +9,20 @@ public class Lexer {
 
 	private static File file;
 	private static int linesQtt;	
+	private boolean empty = false;
 	
 	public Lexer(String fileName) {
 		TokenService.fillExpressions();
 		file = new File(fileName);		
 		linesQtt = setNumberOfLines();
+		
+		if(file.length() == 0) {
+			empty = true;
+		} 
+	}
+	
+	public boolean isEmpty() {
+		return empty;
 	}
 	
 	public Token getNextToken() {
