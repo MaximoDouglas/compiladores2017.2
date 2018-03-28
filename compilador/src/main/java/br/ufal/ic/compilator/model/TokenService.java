@@ -27,11 +27,11 @@ public class TokenService {
 		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]");
 		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"\")|(\"[^\\n]*\")");
 		expressoesECategorias.put(Categories.CTE_CHAR, "('\\\\'')|('[^\\n]{0,1}')"); 
-		expressoesECategorias.put(Categories.CTE_FLOAT, "((\\-)?\\d+\\.(\\d)*)|((\\-)?(\\d)*\\.\\d+)"); 
-		expressoesECategorias.put(Categories.CTE_INT, "(\\-)?\\d+"); 
+		expressoesECategorias.put(Categories.CTE_FLOAT, "(\\d+\\.(\\d)*)|((\\d)*\\.\\d+)"); 
+		expressoesECategorias.put(Categories.CTE_INT, "\\d+"); 
 		expressoesECategorias.put(Categories.CTE_BOOL, "true|false"); 
-		expressoesECategorias.put(Categories.OPA_SUB, "[-]"); 
 		expressoesECategorias.put(Categories.OPA_NEGA, "[-]"); 
+		expressoesECategorias.put(Categories.OPA_POSI, "[+]"); 
 		expressoesECategorias.put(Categories.AB_COLCHET, "\\["); 
 		expressoesECategorias.put(Categories.FE_COLCHET, "\\]"); 
 		expressoesECategorias.put(Categories.TIPO_INT, "int"); 
@@ -40,10 +40,8 @@ public class TokenService {
 		expressoesECategorias.put(Categories.TIPO_CHAR, "char"); 
 		expressoesECategorias.put(Categories.TIPO_VOID, "void"); 
 		expressoesECategorias.put(Categories.OP_CONC, "\\+\\+"); 
-		expressoesECategorias.put(Categories.OPA_AD, "[+]"); 
-		expressoesECategorias.put(Categories.OPA_MULT, "[*]"); 
-		expressoesECategorias.put(Categories.COMENTARIO, "//.*$"); 
-		expressoesECategorias.put(Categories.OPA_DIV, "\\/"); 
+		expressoesECategorias.put(Categories.OPA_AD, "[+|-]"); 
+		expressoesECategorias.put(Categories.OPA_MULT, "[*|/]"); 
 		expressoesECategorias.put(Categories.OPL_OU, "\\|"); 
 		expressoesECategorias.put(Categories.OPL_E, "[&]"); 
 		expressoesECategorias.put(Categories.OPL_NAO, "[!]");

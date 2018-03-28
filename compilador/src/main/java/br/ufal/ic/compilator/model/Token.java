@@ -23,6 +23,7 @@ public class Token {
 		this.colIndex = colIndex;
 	}
 
+	//conta número de espaços em branco no começo da linha
 	public static int getSpaces(String str) {
 		int i = 0, count = 0;
 		while (str.length() != 0) {
@@ -39,6 +40,7 @@ public class Token {
 		return count;
 	}
 
+	//remove os espaços em branco no final das linhas
 	public static String removeFinalSpaces(String str) {
 		if (str == null)
 			return null;
@@ -51,7 +53,8 @@ public class Token {
 		}
 		return str.substring(0, len);
 	}
-
+	
+	//reconhece e retorna o próximo token
 	public static Token nextToken() {
 		String line = Lexer.getLine(stopLineIndex);
 		int spaces;
@@ -85,8 +88,8 @@ public class Token {
 			return null;
 		}
 
-		int initialcolIndex = stopColIndex;
-		int finalcolIndex = stopColIndex;
+		int initialColIndex = stopColIndex;
+		int finalColIndex = stopColIndex;
 
 		Token firstTk = new Token(line.length());
 
@@ -103,50 +106,36 @@ public class Token {
 
 				tk.lineIndex = stopLineIndex;
 
-				if ((tk.categorie == Categories.CTE_CAD_CH && tk.lexema.charAt(0) == '"')
+				if ((tk.categorie == Categories.CTE_CAD_CH)
 						|| tk.categorie == Categories.CTE_CHAR) {
 					tk.lexema = tk.lexema.substring(1, tk.lexema.length() - 1);
 				}
-
-				if ((stopColIndex == 1 && tk.categorie == Categories.OPA_SUB)
-						|| (lastTk != null && tk.categorie == Categories.OPA_SUB
-						&& (lastTk.categorie == Categories.AB_PARENTE
-						|| lastTk.categorie == Categories.ATRIBUICAO
-						|| lastTk.categorie == Categories.AB_COLCHET))) {
-					tk.lexema = "-";
-					tk.categorie = Categories.OPA_NEGA;
+				
+				if(lastTk != null && tk.categorie == Categories.OPA_NEGA && (lastTk.categorie == Categories.ID ||
+						lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.CTE_FLOAT)) {
+					tk.categorie = Categories.OPA_AD;
 				}
-
-				if (tk.categorie != Categories.OPA_NEGA
-						&& (lastTk != null && tk.categorie == Categories.CTE_INT
-						&& (lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.ID)
-						&& tk.lineIndex == lastTk.lineIndex)
-						|| (lastTk != null && tk.categorie == Categories.CTE_FLOAT
-						&& (lastTk.categorie == Categories.CTE_FLOAT || lastTk.categorie == Categories.ID)
-						&& tk.lineIndex == lastTk.lineIndex)) {
-					tk.categorie = Categories.OPA_SUB;
-					tk.lexema = "-";
-					stopColIndex = tk.colIndex + 1;
+				
+				if(lastTk != null && tk.categorie == Categories.OPA_POSI && (lastTk.categorie == Categories.ID ||
+						lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.CTE_FLOAT)) {
+					tk.categorie = Categories.OPA_AD;
 				}
 
 				tk.categorieNumber = tk.categorie.ordinal();
 
 				if (tk.colIndex < firstTk.colIndex) {
 					firstTk = tk;
-					finalcolIndex = stopColIndex;
+					finalColIndex = stopColIndex;
 				}
 			}
 
-			stopColIndex = initialcolIndex;
+			stopColIndex = initialColIndex;
 		}
 
-		stopColIndex = finalcolIndex;
+		stopColIndex = finalColIndex;
 		lastTk = firstTk;
 
-		if (firstTk.categorie == Categories.COMENTARIO) {
-			return nextToken();
-		}
-
+		//if que checa carcatere de escape \
 		if (firstTk.categorie == Categories.CTE_CAD_CH) {
 			String auxStr = firstTk.lexema;
 			for (int i = 1; i < auxStr.length(); i++) {
