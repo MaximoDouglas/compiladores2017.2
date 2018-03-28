@@ -1,0 +1,11 @@
+[001, 001] (0028,  TIPO_VOID) {void}
+[001, 006] (0001,       MAIN) {main}
+[001, 010] (0004, AB_PARENTE) {(}
+[001, 011] (0005, FE_PARENTE) {)}
+[001, 013] (0006,   AB_CHAVE) {{}
+[002, 009] (0041,      SAIDA) {print}
+[002, 014] (0004, AB_PARENTE) {(}
+[002, 015] (0015, CTE_CAD_CH) {Hello World!}
+[002, 029] (0005, FE_PARENTE) {)}
+[002, 030] (0002,  PONT_VIRG) {;}
+[003, 005] (0007,   FE_CHAVE) {}}
