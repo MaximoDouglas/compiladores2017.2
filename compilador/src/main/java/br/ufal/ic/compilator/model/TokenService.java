@@ -11,7 +11,6 @@ public class TokenService {
 
 	public static void fillExpressions () {
 		expressoesECategorias.put(Categories.ID, "[a-zA-Z_][a-zA-Z0-9_]{0,30}");
-		expressoesECategorias.put(Categories.MAIN, "main");
 		expressoesECategorias.put(Categories.PONT_VIRG, "[;]"); 
 		expressoesECategorias.put(Categories.VIRGULA, "[,]"); 
 		expressoesECategorias.put(Categories.AB_PARENTE, "[(]"); 
@@ -52,7 +51,6 @@ public class TokenService {
 		expressoesECategorias.put(Categories.TK_ER_CH, "'");
 		expressoesECategorias.put(Categories.TK_ER_NID, "\\S");
 		
-		reservedWords.put("main", Categories.MAIN);
 		reservedWords.put("true", Categories.CTE_BOOL);
 		reservedWords.put("false", Categories.CTE_BOOL);
 		reservedWords.put("int", Categories.TIPO_INT); 

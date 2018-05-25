@@ -2,7 +2,8 @@ package br.ufal.ic.compilator.model;
 
 public enum Categories {
 	ID,
-	MAIN,
+	//Documentar
+	//MAIN,
 	PONT_VIRG,
 	VIRGULA,
     AB_PARENTE,
