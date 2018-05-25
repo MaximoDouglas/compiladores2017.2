@@ -25,7 +25,6 @@ public class TokenService {
 		expressoesECategorias.put(Categories.CTE_INT, "\\d+"); 
 		expressoesECategorias.put(Categories.CTE_BOOL, "true|false"); 
 		expressoesECategorias.put(Categories.OPA_NEGA, "[-]"); 
-		expressoesECategorias.put(Categories.OPA_POSI, "[+]"); 
 		expressoesECategorias.put(Categories.AB_COLCHET, "\\["); 
 		expressoesECategorias.put(Categories.FE_COLCHET, "\\]"); 
 		expressoesECategorias.put(Categories.TIPO_INT, "int"); 

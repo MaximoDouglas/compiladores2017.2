@@ -59,8 +59,8 @@ public class Token {
 		int spaces;
 		tabAux = 0;
 		if(stopColIndex == 0) { 
-			System.out.println("[" + String.format("%04d", stopLineIndex + 1)
-			+ "]  " + line.trim());
+			System.out.println("" + String.format("%04d", stopLineIndex + 1)
+			+ "  " + line.trim());
 		}
 
 		while (line.trim().equals("")) {
@@ -123,11 +123,6 @@ public class Token {
 					tk.categorie = Categories.OPA_AD;
 				}
 				
-				if(lastTk != null && tk.categorie == Categories.OPA_POSI && (lastTk.categorie == Categories.ID ||
-						lastTk.categorie == Categories.CTE_INT || lastTk.categorie == Categories.CTE_FLOAT)) {
-					tk.categorie = Categories.OPA_AD;
-				}
-
 				tk.categorieNumber = tk.categorie.ordinal();
 
 				if (tk.colIndex < firstTk.colIndex) {
@@ -159,6 +154,7 @@ public class Token {
 		}
 
 		firstTk.colIndex += tabAux;
+		System.out.println("              " + firstTk);
 		return firstTk;
 	}
 
@@ -213,6 +209,10 @@ public class Token {
 		}
 
 		return string;
+	}
+	
+	public Categories getCategorie() {
+		return categorie;
 	}
 
 }

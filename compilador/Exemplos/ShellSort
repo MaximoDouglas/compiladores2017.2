@@ -1,5 +1,7 @@
  void shellSort(int vet[], int size) {
-      int i , j , value;
+      int i;
+      int j;
+      int value;
       int gap;
       gap = 1;
 

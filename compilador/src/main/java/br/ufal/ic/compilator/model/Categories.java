@@ -25,7 +25,6 @@ public enum Categories {
     CTE_INT,
     CTE_BOOL,
     OPA_NEGA,
-    OPA_POSI,
     AB_COLCHET,
     FE_COLCHET,	
     TIPO_INT, 
