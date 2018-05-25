@@ -8,7 +8,6 @@ public class Token {
 	private static int stopLineIndex = 0;
 	private static int stopColIndex = 0;
 	private static Token lastTk = null;
-
 	private int lineIndex;
 	private int colIndex;
 
@@ -23,7 +22,7 @@ public class Token {
 		this.colIndex = colIndex;
 	}
 
-	//conta número de espaços em branco no começo da linha
+	//conta nï¿½mero de espaï¿½os em branco no comeï¿½o da linha
 	public static int getSpaces(String str) {
 		int i = 0, count = 0;
 		while (str.length() != 0) {
@@ -40,7 +39,7 @@ public class Token {
 		return count;
 	}
 
-	//remove os espaços em branco no final das linhas
+	//remove os espaï¿½os em branco no final das linhas
 	public static String removeFinalSpaces(String str) {
 		if (str == null)
 			return null;
@@ -54,19 +53,24 @@ public class Token {
 		return str.substring(0, len);
 	}
 	
-	//reconhece e retorna o próximo token
+	//reconhece e retorna o prï¿½ximo token
 	public static Token nextToken() {
 		String line = Lexer.getLine(stopLineIndex);
 		int spaces;
 		tabAux = 0;
+		if(stopColIndex == 0) { 
+			System.out.println("[" + String.format("%04d", stopLineIndex + 1)
+			+ "]  " + line.trim());
+		}
 
 		while (line.trim().equals("")) {
 			stopLineIndex++;
 			line = Lexer.getLine(stopLineIndex);
 		}
+		
 		line = removeFinalSpaces(line);
 		spaces = getSpaces(line);
-
+		
 		while (stopColIndex >= line.length() && stopLineIndex < Lexer.getNumberOfLines() - 1) {
 			stopLineIndex++;
 			tabAux = 0;
@@ -77,7 +81,9 @@ public class Token {
 				tabAux = 0;
 				line = Lexer.getLine(stopLineIndex);
 			}
-
+			System.out.println("[" + String.format("%04d", stopLineIndex + 1)
+			+ "]  " + line.trim());
+		
 			line = removeFinalSpaces(line);
 			spaces = getSpaces(line);
 			stopColIndex = spaces;
@@ -92,6 +98,7 @@ public class Token {
 		int finalColIndex = stopColIndex;
 
 		Token firstTk = new Token(line.length());
+		//System.out.println(line);
 
 		for (int i = 0; i < TokenService.getExpressions().size(); i++) {
 			Token tk = regexChecker(TokenService.getExpressions().get(Categories.values()[i]),

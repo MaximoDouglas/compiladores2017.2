@@ -36,7 +36,7 @@ public class Table {
                     Cell producao = sheet.getCell(j, i);
 
                     if (nTerm.getType() == CellType.LABEL && term.getType() == CellType.LABEL && producao.getType() == CellType.LABEL) { 
-                    	Pair p = new Pair(nTerm.getContents(), term.getContents());
+                    	Pair p = new Pair(nTerm.getContents(), term.getContents().substring(0, term.getContents().length() - 1).toUpperCase());
                     	table.put(p, producao.getContents());
                     }
                 }
@@ -51,7 +51,7 @@ public class Table {
 		    Pair key = entry.getKey();
 		    String value = entry.getValue();
 
-		    System.out.println ("Key: <" + key.getKey() + ", " + key.getValue() + "> Value: " + value);
+		    System.out.println ("Key: <" + key.getKey() + ", " + key.getValue() + "> ||| Value: " + value);
 		}
 	}
 	
