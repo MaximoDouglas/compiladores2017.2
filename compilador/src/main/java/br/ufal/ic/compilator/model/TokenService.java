@@ -18,12 +18,7 @@ public class TokenService {
 		expressoesECategorias.put(Categories.FE_PARENTE, "[)]");
 		expressoesECategorias.put(Categories.AB_CHAVE, "[{]"); 
 		expressoesECategorias.put(Categories.FE_CHAVE, "[}]"); 
-		expressoesECategorias.put(Categories.OPR_DIF, "!="); 
-		expressoesECategorias.put(Categories.OPR_MEN_IG, "<=");
-		expressoesECategorias.put(Categories.OPR_MEN, "[<]"); 
-		expressoesECategorias.put(Categories.OPR_MAI_IG, ">="); 
-		expressoesECategorias.put(Categories.OPR_MAI, "[>]"); 
-		expressoesECategorias.put(Categories.OPR_IGUAL, "==");
+		expressoesECategorias.put(Categories.OPR, "!=|<=|<|>=|>|==");
 		expressoesECategorias.put(Categories.ATRIBUICAO, "[=]");
 		expressoesECategorias.put(Categories.CTE_CAD_CH, "(\"\")|(\"[^\\n]*\")");
 		expressoesECategorias.put(Categories.CTE_CHAR, "('\\\\'')|('[^\\n]{0,1}')"); 
