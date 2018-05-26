@@ -11,7 +11,7 @@
 
       while(gap > 1) {
           gap = gap/3;
-          for(i = gap; i < size) {
+          for i in (gap, size) {
               value = vet[i];
               j = i - gap;
               while (j >= 0 & value < vet[j]) {
@@ -31,19 +31,21 @@
 
     int vet[size];
 
-    for(i = 0; i < size) {
+    for i in (size) {
       read("%i", vet[i]);
     }
 
-    for(i = 0; i < size - 1) {
+    for i in (size - 1) {
       print("%i, ", vet[i]);
+      i = i + 1;
     }
     println("%i", vet[size-1]);
 
     shellSort(vet, size);
 
-    for(i = 0; i < size - 1) {
+    for i in (size - 1) {
       print("%i, ", vet[i]);
+      i = i + 1;
     }
     println("%i", vet[size-1]);
   }

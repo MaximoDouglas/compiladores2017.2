@@ -38,14 +38,15 @@ public class TokenService {
 		expressoesECategorias.put(Categories.OPL_OU, "\\|"); 
 		expressoesECategorias.put(Categories.OPL_E, "[&]"); 
 		expressoesECategorias.put(Categories.OPL_NAO, "[!]");
-		expressoesECategorias.put(Categories.RETORNO, "return");
-		expressoesECategorias.put(Categories.SE, "if");
-		expressoesECategorias.put(Categories.SENAO, "else"); 
+		expressoesECategorias.put(Categories.RETURN, "return");
+		expressoesECategorias.put(Categories.IF, "if");
+		expressoesECategorias.put(Categories.ELSE, "else"); 
+		expressoesECategorias.put(Categories.IN, "in");
 		expressoesECategorias.put(Categories.FOR, "for"); 
 		expressoesECategorias.put(Categories.WHILE, "while"); 
-		expressoesECategorias.put(Categories.ENTRADA, "read"); 
-		expressoesECategorias.put(Categories.SAIDA, "print"); 
-		expressoesECategorias.put(Categories.SAIDA_LN, "println");
+		expressoesECategorias.put(Categories.READ, "read"); 
+		expressoesECategorias.put(Categories.PRINT, "print"); 
+		expressoesECategorias.put(Categories.PRINTLN, "println");
 		expressoesECategorias.put(Categories.TK_ER_STR, "\"");
 		expressoesECategorias.put(Categories.TK_ER_CH, "'");
 		expressoesECategorias.put(Categories.TK_ER_NID, "\\S");
@@ -57,14 +58,15 @@ public class TokenService {
 		reservedWords.put("boolean", Categories.TIPO_BOOL ); 
 		reservedWords.put("char", Categories.TIPO_CHAR ); 
 		reservedWords.put("void", Categories.TIPO_VOID );
-		reservedWords.put("return", Categories.RETORNO );
-		reservedWords.put("else", Categories.SENAO ); 
+		reservedWords.put("return", Categories.RETURN );
+		reservedWords.put("else", Categories.ELSE ); 
 		reservedWords.put("for", Categories.FOR); 
 		reservedWords.put("while", Categories.WHILE ); 
-		reservedWords.put("read", Categories.ENTRADA ); 
-		reservedWords.put("print", Categories.SAIDA ); 
-		reservedWords.put("println", Categories.SAIDA_LN );
-		reservedWords.put("if", Categories.SE);
+		reservedWords.put("read", Categories.READ ); 
+		reservedWords.put("print", Categories.PRINT ); 
+		reservedWords.put("println", Categories.PRINTLN );
+		reservedWords.put("if", Categories.IF);
+		reservedWords.put("in", Categories.IN);
 	}
 
 	public static Map<Categories, String> getExpressions(){
