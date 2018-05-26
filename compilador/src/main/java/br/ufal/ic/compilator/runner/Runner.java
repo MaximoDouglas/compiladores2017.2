@@ -8,7 +8,7 @@ public class Runner {
 		
 		args = new String[1];
 		
-		args[0] = "Exemplos/ShellSort";
+		args[0] = "Exemplos/Fibonacci";
 		CompilerGD compilador = null;
 		
 		if (args.length > 0) {

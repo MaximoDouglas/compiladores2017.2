@@ -2,10 +2,12 @@ package br.ufal.ic.compilator.model;
 
 import java.util.Stack;
 
-public class CompilerGD {
+import javafx.util.Pair;
 
+public class CompilerGD {
+	private boolean accepted = true;
 	private Lexer lexer;
-	Table tab;
+	private Table tab;
 
 	public CompilerGD(String[] args) {
 		tab = new Table();
@@ -26,12 +28,21 @@ public class CompilerGD {
 				System.out.println("              " + tokenAtual.toString());
 				pilha.pop();
 				tokenAtual = lexer.getNextToken();
-				
-			} else {
+			} else {				
 				producao = tab.getDerivation(topoPilha, tokenAtual.getCategorie().toString().toLowerCase());
+								
+				if(producao == null) {
+					System.out.println();
+					System.out.println("ERRO: sintaxe incorreta! Análise encerrada!");
+					accepted = false;
+					break;
+				}
+				
 				System.out.println("          " + producao);
 				
 				String[] prodAux = producao.split("=");
+				
+				
 				String[] itensProducao = prodAux[1].trim().split(" ");
 
 				if (!itensProducao[0].equals("epsilon")) {
@@ -49,6 +60,11 @@ public class CompilerGD {
 					pilha.pop();
 				}
 			}						
+		}
+		
+		if(accepted) {
+			System.out.println();
+			System.out.println("Sintaxe correta! Análise encerrada!");
 		}
 	}
 
