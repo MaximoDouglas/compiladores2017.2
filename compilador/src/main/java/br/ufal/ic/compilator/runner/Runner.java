@@ -5,6 +5,10 @@ import br.ufal.ic.compilator.model.CompilerGD;
 public class Runner {
 
 	public static void main(String[] args) {
+		
+		args = new String[1];
+		
+		args[0] = "Exemplos/HelloWorld";
 		CompilerGD compilador = null;
 		
 		if (args.length > 0) {

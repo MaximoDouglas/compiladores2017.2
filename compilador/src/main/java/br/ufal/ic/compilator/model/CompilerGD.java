@@ -12,7 +12,6 @@ public class CompilerGD {
 		lexer = new Lexer(args[0]);
 	}
 
-	@SuppressWarnings({"unused"})
 	public void run() {
 		Stack<String> pilha = new Stack<String>();
 		pilha.push("Programa");
@@ -24,13 +23,12 @@ public class CompilerGD {
 			String topoPilha = pilha.peek();
 
 			if (topoPilha.equals(tokenAtual.getCategorie().toString().toLowerCase())) {
-
+				System.out.println("              " + tokenAtual.toString());
 				pilha.pop();
 				tokenAtual = lexer.getNextToken();
 				
 			} else {
 				producao = tab.getDerivation(topoPilha, tokenAtual.getCategorie().toString().toLowerCase());
-				
 				System.out.println("          " + producao);
 				
 				String[] prodAux = producao.split("=");

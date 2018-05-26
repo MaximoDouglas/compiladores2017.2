@@ -59,7 +59,7 @@ public class Token {
 		int spaces;
 		tabAux = 0;
 		if(stopColIndex == 0) { 
-			System.out.println("" + String.format("%04d", stopLineIndex + 1)
+			System.out.println("" + String.format("%4s", stopLineIndex + 1)
 			+ "  " + line.trim());
 		}
 
@@ -81,8 +81,8 @@ public class Token {
 				tabAux = 0;
 				line = Lexer.getLine(stopLineIndex);
 			}
-			System.out.println("[" + String.format("%04d", stopLineIndex + 1)
-			+ "]  " + line.trim());
+			System.out.println(String.format("%4s", stopLineIndex + 1)
+			+ "  " + line.trim());
 		
 			line = removeFinalSpaces(line);
 			spaces = getSpaces(line);
@@ -154,7 +154,6 @@ public class Token {
 		}
 
 		firstTk.colIndex += tabAux;
-		System.out.println("              " + firstTk);
 		return firstTk;
 	}
 

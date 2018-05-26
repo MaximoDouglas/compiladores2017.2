@@ -1,3 +1,11 @@
 void main() {
   	print("Hello World!");
 }
+
+void func() {
+  	print("Hello World!");
+}
+
+void outraFunc() {
+  	print("Hello World!");
+}
