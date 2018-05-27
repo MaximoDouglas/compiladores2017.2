@@ -2,8 +2,6 @@ package br.ufal.ic.compilator.model;
 
 public enum Categories {
 	ID,
-	//Documentar
-	//MAIN,
 	PONT_VIRG,
 	VIRGULA,
     AB_PARENTE,
@@ -11,13 +9,6 @@ public enum Categories {
     AB_CHAVE,
     FE_CHAVE,
     OPR,
-//Fazer errata    
-//    OPR_DIF, 
-//    OPR_MEN_IG, 
-//    OPR_MEN, 
-//    OPR_MAI_IG,
-//    OPR_MAI, 
-//    OPR_IGUAL, 
     ATRIBUICAO, 
     CTE_CAD_CH,
     CTE_CHAR, 
@@ -39,21 +30,14 @@ public enum Categories {
     OPL_E, 
     OPL_NAO,
     RETURN,
-    //Documentar inserção do in e mudança nas categorias
-    //SE,
-    //SENAO,
     IF,
     ELSE,
     IN,
     FOR, 
     WHILE,
-  //Documentar inserção do in e mudança nas categorias
     READ,
     PRINT,
     PRINTLN,
-//    ENTRADA, 
-//    SAIDA, 
-//    SAIDA_LN,
     TK_ER_STR,
     TK_ER_CH,
     TK_ER_NID

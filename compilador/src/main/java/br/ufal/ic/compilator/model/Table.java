@@ -32,12 +32,7 @@ public class Table {
 	public Table() {
 		this.populateTable();
 	}
-
-	// populateTable(), getStack() e getDerivation() são importantes para a execução
-	// do
-	// analisador
-	// main(0 e read() servem apenas para ler planilha (DEVEM SER RETIRADOS QUANDO A
-	// GRAMÁTICA ESTIVER FINALIZADO)
+	
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private void populateTable() {
 		table.put(new Pair("Bloco","'id'"),"Bloco = 'id' BlocoAux");
@@ -276,36 +271,37 @@ public class Table {
 		return production;
 	}
 
-	public void read() throws IOException {
-		File inputWorkbook = new File("Exemplos/tabela.xls");
-		Workbook w;
-		PrintWriter writer = new PrintWriter("Exemplos/tabela.txt", "UTF-8");
-		try {
-			w = Workbook.getWorkbook(inputWorkbook);
-			Sheet sheet = w.getSheet(0);
-
-			for (int j = 1; j < sheet.getColumns(); j++) {
-				for (int i = 1; i < sheet.getRows(); i++) {
-					Cell nTerm = sheet.getCell(0, i);
-					Cell term = sheet.getCell(j, 0);
-					Cell producao = sheet.getCell(j, i);
-					if (!nTerm.getContents().equals("") && !term.getContents().equals("")
-							&& !producao.getContents().equals("")) {
-						String line = "table.put(new Pair(\"" + nTerm.getContents().toString() + "\"," + "\""
-								+ term.getContents().toString() + "\"),\"" + producao.getContents().toString() + "\");";
-						System.out.println(line);
-					}
-				}
-			}
-			writer.close();
-		} catch (BiffException e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void main(String[] args) throws IOException {
-		Table test = new Table();
-		test.read();
-	}
+	//Esses métodos foram usados na leitura da planilha
+//	public void read() throws IOException {
+//		File inputWorkbook = new File("Exemplos/tabela.xls");
+//		Workbook w;
+//		PrintWriter writer = new PrintWriter("Exemplos/tabela.txt", "UTF-8");
+//		try {
+//			w = Workbook.getWorkbook(inputWorkbook);
+//			Sheet sheet = w.getSheet(0);
+//
+//			for (int j = 1; j < sheet.getColumns(); j++) {
+//				for (int i = 1; i < sheet.getRows(); i++) {
+//					Cell nTerm = sheet.getCell(0, i);
+//					Cell term = sheet.getCell(j, 0);
+//					Cell producao = sheet.getCell(j, i);
+//					if (!nTerm.getContents().equals("") && !term.getContents().equals("")
+//							&& !producao.getContents().equals("")) {
+//						String line = "table.put(new Pair(\"" + nTerm.getContents().toString() + "\"," + "\""
+//								+ term.getContents().toString() + "\"),\"" + producao.getContents().toString() + "\");";
+//						System.out.println(line);
+//					}
+//				}
+//			}
+//			writer.close();
+//		} catch (BiffException e) {
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	public static void main(String[] args) throws IOException {
+//		Table test = new Table();
+//		test.read();
+//	}
 
 }
