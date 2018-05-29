@@ -37,15 +37,13 @@
 
     for i in (size - 1) {
       print("%i, ", vet[i]);
-      i = i + 1;
     }
-    println("%i", vet[size-1]);
+    print("%i\n", vet[size-1]);
 
     shellSort(vet, size);
 
     for i in (size - 1) {
       print("%i, ", vet[i]);
-      i = i + 1;
     }
-    println("%i", vet[size-1]);
+    print("%i\n", vet[size-1]);
   }

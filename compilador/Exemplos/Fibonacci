@@ -26,5 +26,5 @@ void main() {
     print("%i, ", sequencia[aux]);
     aux = aux + 1;
   }
-  println("%i", sequencia[limite - 1]);
+  print("%i\n", sequencia[limite - 1]);
 }

@@ -46,7 +46,6 @@ public class TokenService {
 		expressoesECategorias.put(Categories.WHILE, "while"); 
 		expressoesECategorias.put(Categories.READ, "read"); 
 		expressoesECategorias.put(Categories.PRINT, "print"); 
-		expressoesECategorias.put(Categories.PRINTLN, "println");
 		expressoesECategorias.put(Categories.TK_ER_STR, "\"");
 		expressoesECategorias.put(Categories.TK_ER_CH, "'");
 		expressoesECategorias.put(Categories.TK_ER_NID, "\\S");
@@ -64,7 +63,6 @@ public class TokenService {
 		reservedWords.put("while", Categories.WHILE ); 
 		reservedWords.put("read", Categories.READ ); 
 		reservedWords.put("print", Categories.PRINT ); 
-		reservedWords.put("println", Categories.PRINTLN );
 		reservedWords.put("if", Categories.IF);
 		reservedWords.put("in", Categories.IN);
 	}

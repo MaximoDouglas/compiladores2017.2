@@ -37,7 +37,6 @@ public enum Categories {
     WHILE,
     READ,
     PRINT,
-    PRINTLN,
     TK_ER_STR,
     TK_ER_CH,
     TK_ER_NID
