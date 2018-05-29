@@ -1,3 +1,3 @@
 # Linguagem de programação GimmeDaddy
 
-Especificação e implementação (em Java) do analisador léxico da linguagem.
+Especificação e implementação (em Java) dos analisadores léxico e sintático da linguagem.
