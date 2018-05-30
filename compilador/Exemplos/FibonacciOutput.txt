@@ -1,4 +1,4 @@
-1  void fib(int limite, int seq[]) {
+        1  void fib(int limite, int seq[]) {
                 Programa = Cod
                 Cod = Funcao CodAux
                 Funcao = 'tipo_void' 'id' 'ab_parente' LParam 'fe_parente' 'ab_chave' Bloco 'fe_chave'
