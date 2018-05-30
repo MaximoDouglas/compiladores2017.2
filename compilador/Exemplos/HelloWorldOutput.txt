@@ -1,11 +1,24 @@
-[001, 001] (0028,  TIPO_VOID) {void}
-[001, 006] (0001,       MAIN) {main}
-[001, 010] (0004, AB_PARENTE) {(}
-[001, 011] (0005, FE_PARENTE) {)}
-[001, 013] (0006,   AB_CHAVE) {{}
-[002, 009] (0041,      SAIDA) {print}
-[002, 014] (0004, AB_PARENTE) {(}
-[002, 015] (0015, CTE_CAD_CH) {Hello World!}
-[002, 029] (0005, FE_PARENTE) {)}
-[002, 030] (0002,  PONT_VIRG) {;}
-[003, 005] (0007,   FE_CHAVE) {}}
+         1  void main() {
+                Programa = Cod
+                Cod = Funcao CodAux
+                Funcao = 'tipo_void' 'id' 'ab_parente' LParam 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                    [001, 001] (0021,  TIPO_VOID) {void}
+                    [001, 006] (0000,         ID) {main}
+                    [001, 010] (0003, AB_PARENTE) {(}
+                LParam = epsilon
+                    [001, 011] (0004, FE_PARENTE) {)}
+                    [001, 013] (0005,   AB_CHAVE) {{}
+         2  print("Hello World!");
+                Bloco = Print Bloco
+                Print = 'print' 'ab_parente' 'cte_cad_ch' PrintAux 'fe_parente' 'pont_virg'
+                    [002, 007] (0035,      PRINT) {print}
+                    [002, 012] (0003, AB_PARENTE) {(}
+                    [002, 013] (0009, CTE_CAD_CH) {Hello World!}
+                PrintAux = epsilon
+                    [002, 027] (0004, FE_PARENTE) {)}
+                    [002, 028] (0001,  PONT_VIRG) {;}
+         3  }
+                Bloco = epsilon
+                    [003, 001] (0006,   FE_CHAVE) {}}
+
+      Sintaxe correta! Análise encerrada!
