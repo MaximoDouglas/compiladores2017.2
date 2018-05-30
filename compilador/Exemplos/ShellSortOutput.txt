@@ -1,250 +1,892 @@
-[001, 002] (0028,  TIPO_VOID) {void}
-[001, 007] (0000,         ID) {shellSort}
-[001, 016] (0004, AB_PARENTE) {(}
-[001, 017] (0024,   TIPO_INT) {int}
-[001, 021] (0000,         ID) {vet}
-[001, 024] (0022, AB_COLCHET) {[}
-[001, 025] (0023, FE_COLCHET) {]}
-[001, 026] (0003,    VIRGULA) {,}
-[001, 028] (0024,   TIPO_INT) {int}
-[001, 032] (0000,         ID) {size}
-[001, 036] (0005, FE_PARENTE) {)}
-[001, 038] (0006,   AB_CHAVE) {{}
-[002, 007] (0024,   TIPO_INT) {int}
-[002, 011] (0000,         ID) {i}
-[002, 013] (0003,    VIRGULA) {,}
-[002, 015] (0000,         ID) {j}
-[002, 017] (0003,    VIRGULA) {,}
-[002, 019] (0000,         ID) {value}
-[002, 024] (0002,  PONT_VIRG) {;}
-[003, 007] (0024,   TIPO_INT) {int}
-[003, 011] (0000,         ID) {gap}
-[003, 014] (0002,  PONT_VIRG) {;}
-[004, 007] (0000,         ID) {gap}
-[004, 011] (0014, ATRIBUICAO) {=}
-[004, 013] (0018,    CTE_INT) {1}
-[004, 014] (0002,  PONT_VIRG) {;}
-[006, 007] (0039,      WHILE) {while}
-[006, 012] (0004, AB_PARENTE) {(}
-[006, 013] (0000,         ID) {gap}
-[006, 017] (0010,    OPR_MEN) {<}
-[006, 019] (0000,         ID) {size}
-[006, 023] (0005, FE_PARENTE) {)}
-[006, 025] (0006,   AB_CHAVE) {{}
-[007, 011] (0000,         ID) {gap}
-[007, 015] (0014, ATRIBUICAO) {=}
-[007, 017] (0018,    CTE_INT) {3}
-[007, 018] (0031,   OPA_MULT) {*}
-[007, 019] (0000,         ID) {gap}
-[007, 022] (0030,     OPA_AD) {+}
-[007, 023] (0018,    CTE_INT) {1}
-[007, 024] (0002,  PONT_VIRG) {;}
-[008, 007] (0007,   FE_CHAVE) {}}
-[010, 007] (0039,      WHILE) {while}
-[010, 012] (0004, AB_PARENTE) {(}
-[010, 013] (0000,         ID) {gap}
-[010, 017] (0012,    OPR_MAI) {>}
-[010, 019] (0018,    CTE_INT) {1}
-[010, 020] (0005, FE_PARENTE) {)}
-[010, 022] (0006,   AB_CHAVE) {{}
-[011, 011] (0000,         ID) {gap}
-[011, 015] (0014, ATRIBUICAO) {=}
-[011, 017] (0000,         ID) {gap}
-[011, 020] (0031,   OPA_MULT) {/}
-[011, 021] (0018,    CTE_INT) {3}
-[011, 022] (0002,  PONT_VIRG) {;}
-[012, 011] (0038,        FOR) {for}
-[012, 014] (0004, AB_PARENTE) {(}
-[012, 015] (0000,         ID) {i}
-[012, 017] (0014, ATRIBUICAO) {=}
-[012, 019] (0000,         ID) {gap}
-[012, 022] (0002,  PONT_VIRG) {;}
-[012, 024] (0000,         ID) {i}
-[012, 026] (0010,    OPR_MEN) {<}
-[012, 028] (0000,         ID) {size}
-[012, 032] (0005, FE_PARENTE) {)}
-[012, 034] (0006,   AB_CHAVE) {{}
-[013, 015] (0000,         ID) {value}
-[013, 021] (0014, ATRIBUICAO) {=}
-[013, 023] (0000,         ID) {vet}
-[013, 026] (0022, AB_COLCHET) {[}
-[013, 027] (0000,         ID) {i}
-[013, 028] (0023, FE_COLCHET) {]}
-[013, 029] (0002,  PONT_VIRG) {;}
-[014, 015] (0000,         ID) {j}
-[014, 017] (0014, ATRIBUICAO) {=}
-[014, 019] (0000,         ID) {i}
-[014, 021] (0030,     OPA_AD) {-}
-[014, 023] (0000,         ID) {gap}
-[014, 026] (0002,  PONT_VIRG) {;}
-[015, 015] (0039,      WHILE) {while}
-[015, 021] (0004, AB_PARENTE) {(}
-[015, 022] (0000,         ID) {j}
-[015, 024] (0011, OPR_MAI_IG) {>=}
-[015, 027] (0018,    CTE_INT) {0}
-[015, 029] (0033,      OPL_E) {&}
-[015, 031] (0000,         ID) {value}
-[015, 037] (0010,    OPR_MEN) {<}
-[015, 039] (0000,         ID) {vet}
-[015, 042] (0022, AB_COLCHET) {[}
-[015, 043] (0000,         ID) {j}
-[015, 044] (0023, FE_COLCHET) {]}
-[015, 045] (0005, FE_PARENTE) {)}
-[015, 047] (0006,   AB_CHAVE) {{}
-[016, 019] (0000,         ID) {vet}
-[016, 023] (0022, AB_COLCHET) {[}
-[016, 024] (0000,         ID) {j}
-[016, 026] (0030,     OPA_AD) {+}
-[016, 028] (0000,         ID) {gap}
-[016, 031] (0023, FE_COLCHET) {]}
-[016, 033] (0014, ATRIBUICAO) {=}
-[016, 035] (0000,         ID) {vet}
-[016, 038] (0022, AB_COLCHET) {[}
-[016, 039] (0000,         ID) {j}
-[016, 040] (0023, FE_COLCHET) {]}
-[016, 041] (0002,  PONT_VIRG) {;}
-[017, 019] (0000,         ID) {j}
-[017, 021] (0014, ATRIBUICAO) {=}
-[017, 023] (0000,         ID) {j}
-[017, 025] (0030,     OPA_AD) {-}
-[017, 027] (0000,         ID) {gap}
-[017, 030] (0002,  PONT_VIRG) {;}
-[018, 015] (0007,   FE_CHAVE) {}}
-[019, 015] (0000,         ID) {vet}
-[019, 019] (0022, AB_COLCHET) {[}
-[019, 020] (0000,         ID) {j}
-[019, 022] (0030,     OPA_AD) {+}
-[019, 024] (0000,         ID) {gap}
-[019, 027] (0023, FE_COLCHET) {]}
-[019, 029] (0014, ATRIBUICAO) {=}
-[019, 031] (0000,         ID) {value}
-[019, 036] (0002,  PONT_VIRG) {;}
-[020, 011] (0007,   FE_CHAVE) {}}
-[021, 007] (0007,   FE_CHAVE) {}}
-[022, 003] (0007,   FE_CHAVE) {}}
-[024, 003] (0028,  TIPO_VOID) {void}
-[024, 008] (0001,       MAIN) {main}
-[024, 012] (0004, AB_PARENTE) {(}
-[024, 013] (0005, FE_PARENTE) {)}
-[024, 015] (0006,   AB_CHAVE) {{}
-[025, 005] (0024,   TIPO_INT) {int}
-[025, 009] (0000,         ID) {size}
-[025, 013] (0002,  PONT_VIRG) {;}
-[026, 005] (0024,   TIPO_INT) {int}
-[026, 009] (0000,         ID) {i}
-[026, 010] (0002,  PONT_VIRG) {;}
-[028, 005] (0040,    ENTRADA) {read}
-[028, 009] (0004, AB_PARENTE) {(}
-[028, 010] (0015, CTE_CAD_CH) {%i}
-[028, 014] (0003,    VIRGULA) {,}
-[028, 016] (0000,         ID) {size}
-[028, 020] (0005, FE_PARENTE) {)}
-[028, 021] (0002,  PONT_VIRG) {;}
-[030, 005] (0024,   TIPO_INT) {int}
-[030, 009] (0000,         ID) {vet}
-[030, 012] (0022, AB_COLCHET) {[}
-[030, 013] (0000,         ID) {size}
-[030, 017] (0023, FE_COLCHET) {]}
-[030, 018] (0002,  PONT_VIRG) {;}
-[032, 005] (0038,        FOR) {for}
-[032, 008] (0004, AB_PARENTE) {(}
-[032, 009] (0000,         ID) {i}
-[032, 011] (0014, ATRIBUICAO) {=}
-[032, 013] (0018,    CTE_INT) {0}
-[032, 014] (0002,  PONT_VIRG) {;}
-[032, 016] (0000,         ID) {i}
-[032, 018] (0010,    OPR_MEN) {<}
-[032, 020] (0000,         ID) {size}
-[032, 024] (0005, FE_PARENTE) {)}
-[032, 026] (0006,   AB_CHAVE) {{}
-[033, 007] (0040,    ENTRADA) {read}
-[033, 011] (0004, AB_PARENTE) {(}
-[033, 012] (0015, CTE_CAD_CH) {%i}
-[033, 016] (0003,    VIRGULA) {,}
-[033, 018] (0000,         ID) {vet}
-[033, 021] (0022, AB_COLCHET) {[}
-[033, 022] (0000,         ID) {i}
-[033, 023] (0023, FE_COLCHET) {]}
-[033, 024] (0005, FE_PARENTE) {)}
-[033, 025] (0002,  PONT_VIRG) {;}
-[034, 005] (0007,   FE_CHAVE) {}}
-[036, 005] (0038,        FOR) {for}
-[036, 008] (0004, AB_PARENTE) {(}
-[036, 009] (0000,         ID) {i}
-[036, 011] (0014, ATRIBUICAO) {=}
-[036, 013] (0018,    CTE_INT) {0}
-[036, 014] (0002,  PONT_VIRG) {;}
-[036, 016] (0000,         ID) {i}
-[036, 018] (0010,    OPR_MEN) {<}
-[036, 020] (0000,         ID) {size}
-[036, 025] (0030,     OPA_AD) {-}
-[036, 027] (0018,    CTE_INT) {1}
-[036, 028] (0005, FE_PARENTE) {)}
-[036, 030] (0006,   AB_CHAVE) {{}
-[037, 007] (0041,      SAIDA) {print}
-[037, 012] (0004, AB_PARENTE) {(}
-[037, 013] (0015, CTE_CAD_CH) {%i, }
-[037, 019] (0003,    VIRGULA) {,}
-[037, 021] (0000,         ID) {vet}
-[037, 024] (0022, AB_COLCHET) {[}
-[037, 025] (0000,         ID) {i}
-[037, 026] (0023, FE_COLCHET) {]}
-[037, 027] (0005, FE_PARENTE) {)}
-[037, 028] (0002,  PONT_VIRG) {;}
-[038, 005] (0007,   FE_CHAVE) {}}
-[039, 005] (0042,   SAIDA_LN) {println}
-[039, 012] (0004, AB_PARENTE) {(}
-[039, 013] (0015, CTE_CAD_CH) {%i}
-[039, 017] (0003,    VIRGULA) {,}
-[039, 019] (0000,         ID) {vet}
-[039, 022] (0022, AB_COLCHET) {[}
-[039, 023] (0000,         ID) {size}
-[039, 027] (0030,     OPA_AD) {-}
-[039, 028] (0018,    CTE_INT) {1}
-[039, 029] (0023, FE_COLCHET) {]}
-[039, 030] (0005, FE_PARENTE) {)}
-[039, 031] (0002,  PONT_VIRG) {;}
-[041, 005] (0000,         ID) {shellSort}
-[041, 014] (0004, AB_PARENTE) {(}
-[041, 015] (0000,         ID) {vet}
-[041, 018] (0003,    VIRGULA) {,}
-[041, 020] (0000,         ID) {size}
-[041, 024] (0005, FE_PARENTE) {)}
-[041, 025] (0002,  PONT_VIRG) {;}
-[043, 005] (0038,        FOR) {for}
-[043, 008] (0004, AB_PARENTE) {(}
-[043, 009] (0000,         ID) {i}
-[043, 011] (0014, ATRIBUICAO) {=}
-[043, 013] (0018,    CTE_INT) {0}
-[043, 014] (0002,  PONT_VIRG) {;}
-[043, 016] (0000,         ID) {i}
-[043, 018] (0010,    OPR_MEN) {<}
-[043, 020] (0000,         ID) {size}
-[043, 025] (0030,     OPA_AD) {-}
-[043, 027] (0018,    CTE_INT) {1}
-[043, 028] (0005, FE_PARENTE) {)}
-[043, 030] (0006,   AB_CHAVE) {{}
-[044, 007] (0041,      SAIDA) {print}
-[044, 012] (0004, AB_PARENTE) {(}
-[044, 013] (0015, CTE_CAD_CH) {%i, }
-[044, 019] (0003,    VIRGULA) {,}
-[044, 021] (0000,         ID) {vet}
-[044, 024] (0022, AB_COLCHET) {[}
-[044, 025] (0000,         ID) {i}
-[044, 026] (0023, FE_COLCHET) {]}
-[044, 027] (0005, FE_PARENTE) {)}
-[044, 028] (0002,  PONT_VIRG) {;}
-[045, 005] (0007,   FE_CHAVE) {}}
-[046, 005] (0042,   SAIDA_LN) {println}
-[046, 012] (0004, AB_PARENTE) {(}
-[046, 013] (0015, CTE_CAD_CH) {%i}
-[046, 017] (0003,    VIRGULA) {,}
-[046, 019] (0000,         ID) {vet}
-[046, 022] (0022, AB_COLCHET) {[}
-[046, 023] (0000,         ID) {size}
-[046, 027] (0030,     OPA_AD) {-}
-[046, 028] (0018,    CTE_INT) {1}
-[046, 029] (0023, FE_COLCHET) {]}
-[046, 030] (0005, FE_PARENTE) {)}
-[046, 031] (0002,  PONT_VIRG) {;}
-[047, 003] (0007,   FE_CHAVE) {}}
+        1  void shellSort(int vet[], int size) {
+                  Programa = Cod
+                  Cod = Funcao CodAux
+                  Funcao = 'tipo_void' 'id' 'ab_parente' LParam 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [001, 002] (0021,  TIPO_VOID) {void}
+                      [001, 007] (0000,         ID) {shellSort}
+                      [001, 016] (0003, AB_PARENTE) {(}
+                  LParam = Tipo 'id' LParAux
+                  Tipo = 'tipo_int'
+                      [001, 017] (0017,   TIPO_INT) {int}
+                      [001, 021] (0000,         ID) {vet}
+                  LParAux = LParV LParAuxRes
+                  LParV = 'ab_colchet' 'fe_colchet'
+                      [001, 024] (0015, AB_COLCHET) {[}
+                      [001, 025] (0016, FE_COLCHET) {]}
+                  LParAuxRes = 'virgula' Tipo 'id' LParAux
+                      [001, 026] (0002,    VIRGULA) {,}
+                  Tipo = 'tipo_int'
+                      [001, 028] (0017,   TIPO_INT) {int}
+                      [001, 032] (0000,         ID) {size}
+                  LParAux = LParV LParAuxRes
+                  LParV = epsilon
+                  LParAuxRes = epsilon
+                      [001, 036] (0004, FE_PARENTE) {)}
+                      [001, 038] (0005,   AB_CHAVE) {{}
+           2  int i;
+                  Bloco = Declaracao Bloco
+                  Declaracao = Tipo 'id' DeclFim
+                  Tipo = 'tipo_int'
+                      [002, 007] (0017,   TIPO_INT) {int}
+                      [002, 011] (0000,         ID) {i}
+                  DeclFim = 'pont_virg'
+                      [002, 012] (0001,  PONT_VIRG) {;}
+           3  int j;
+                  Bloco = Declaracao Bloco
+                  Declaracao = Tipo 'id' DeclFim
+                  Tipo = 'tipo_int'
+                      [003, 007] (0017,   TIPO_INT) {int}
+                      [003, 011] (0000,         ID) {j}
+                  DeclFim = 'pont_virg'
+                      [003, 012] (0001,  PONT_VIRG) {;}
+           4  int value;
+                  Bloco = Declaracao Bloco
+                  Declaracao = Tipo 'id' DeclFim
+                  Tipo = 'tipo_int'
+                      [004, 007] (0017,   TIPO_INT) {int}
+                      [004, 011] (0000,         ID) {value}
+                  DeclFim = 'pont_virg'
+                      [004, 016] (0001,  PONT_VIRG) {;}
+           5  int gap;
+                  Bloco = Declaracao Bloco
+                  Declaracao = Tipo 'id' DeclFim
+                  Tipo = 'tipo_int'
+                      [005, 007] (0017,   TIPO_INT) {int}
+                      [005, 011] (0000,         ID) {gap}
+                  DeclFim = 'pont_virg'
+                      [005, 014] (0001,  PONT_VIRG) {;}
+           6  gap = 1;
+                  Bloco = 'id' BlocoAux
+                      [006, 007] (0000,         ID) {gap}
+                  BlocoAux = Atribuicao Bloco
+                  Atribuicao = 'atribuicao' ExpConcat 'pont_virg'
+                      [006, 011] (0008, ATRIBUICAO) {=}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [006, 013] (0012,    CTE_INT) {1}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [006, 014] (0001,  PONT_VIRG) {;}
+           8  while(gap < size) {
+                  Bloco = While Bloco
+                  While = 'while' 'ab_parente' ExpBool 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [008, 007] (0033,      WHILE) {while}
+                      [008, 012] (0003, AB_PARENTE) {(}
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [008, 013] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = 'opr' ExpArit TermRel
+                      [008, 017] (0007,        OPR) {<}
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [008, 019] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                      [008, 023] (0004, FE_PARENTE) {)}
+                      [008, 025] (0005,   AB_CHAVE) {{}
+           9  gap = 3*gap+1;
+                  Bloco = 'id' BlocoAux
+                      [009, 011] (0000,         ID) {gap}
+                  BlocoAux = Atribuicao Bloco
+                  Atribuicao = 'atribuicao' ExpConcat 'pont_virg'
+                      [009, 015] (0008, ATRIBUICAO) {=}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [009, 017] (0012,    CTE_INT) {3}
+                  TermAriRes = 'opa_mult' FatAritRes TermAriRes
+                      [009, 018] (0024,   OPA_MULT) {*}
+                  FatAritRes = 'id' CFuncAux
+                      [009, 019] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [009, 022] (0023,     OPA_AD) {+}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [009, 023] (0012,    CTE_INT) {1}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [009, 024] (0001,  PONT_VIRG) {;}
+          10  }
+                  Bloco = epsilon
+                      [010, 007] (0006,   FE_CHAVE) {}}
+          12  while(gap > 1) {
+                  Bloco = While Bloco
+                  While = 'while' 'ab_parente' ExpBool 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [012, 007] (0033,      WHILE) {while}
+                      [012, 012] (0003, AB_PARENTE) {(}
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [012, 013] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = 'opr' ExpArit TermRel
+                      [012, 017] (0007,        OPR) {>}
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [012, 019] (0012,    CTE_INT) {1}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                      [012, 020] (0004, FE_PARENTE) {)}
+                      [012, 022] (0005,   AB_CHAVE) {{}
+          13  gap = gap/3;
+                  Bloco = 'id' BlocoAux
+                      [013, 011] (0000,         ID) {gap}
+                  BlocoAux = Atribuicao Bloco
+                  Atribuicao = 'atribuicao' ExpConcat 'pont_virg'
+                      [013, 015] (0008, ATRIBUICAO) {=}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [013, 017] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = 'opa_mult' FatAritRes TermAriRes
+                      [013, 020] (0024,   OPA_MULT) {/}
+                  FatAritRes = 'cte_int'
+                      [013, 021] (0012,    CTE_INT) {3}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [013, 022] (0001,  PONT_VIRG) {;}
+          14  for i in (gap, size) {
+                  Bloco = For Bloco
+                  For = 'for' 'id' 'in' 'ab_parente' Range 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [014, 011] (0032,        FOR) {for}
+                      [014, 015] (0000,         ID) {i}
+                      [014, 017] (0031,         IN) {in}
+                      [014, 020] (0003, AB_PARENTE) {(}
+                  Range = ExpArit RangeAux
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [014, 021] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  RangeAux = 'virgula' ExpArit
+                      [014, 024] (0002,    VIRGULA) {,}
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [014, 026] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                      [014, 030] (0004, FE_PARENTE) {)}
+                      [014, 032] (0005,   AB_CHAVE) {{}
+          15  value = vet[i];
+                  Bloco = 'id' BlocoAux
+                      [015, 015] (0000,         ID) {value}
+                  BlocoAux = Atribuicao Bloco
+                  Atribuicao = 'atribuicao' ExpConcat 'pont_virg'
+                      [015, 021] (0008, ATRIBUICAO) {=}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [015, 023] (0000,         ID) {vet}
+                  CFuncAux = 'ab_colchet' ExpConcat 'fe_colchet'
+                      [015, 026] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [015, 027] (0000,         ID) {i}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [015, 028] (0016, FE_COLCHET) {]}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [015, 029] (0001,  PONT_VIRG) {;}
+          16  j = i - gap;
+                  Bloco = 'id' BlocoAux
+                      [016, 015] (0000,         ID) {j}
+                  BlocoAux = Atribuicao Bloco
+                  Atribuicao = 'atribuicao' ExpConcat 'pont_virg'
+                      [016, 017] (0008, ATRIBUICAO) {=}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [016, 019] (0000,         ID) {i}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [016, 021] (0023,     OPA_AD) {-}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [016, 023] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [016, 026] (0001,  PONT_VIRG) {;}
+          17  while (j >= 0 & value < vet[j]) {
+                  Bloco = While Bloco
+                  While = 'while' 'ab_parente' ExpBool 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [017, 015] (0033,      WHILE) {while}
+                      [017, 021] (0003, AB_PARENTE) {(}
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [017, 022] (0000,         ID) {j}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = 'opr' ExpArit TermRel
+                      [017, 024] (0007,        OPR) {>=}
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [017, 027] (0012,    CTE_INT) {0}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = 'opl_e' ExpRel TermBoRes
+                      [017, 029] (0026,      OPL_E) {&}
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [017, 031] (0000,         ID) {value}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = 'opr' ExpArit TermRel
+                      [017, 037] (0007,        OPR) {<}
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [017, 039] (0000,         ID) {vet}
+                  CFuncAux = 'ab_colchet' ExpConcat 'fe_colchet'
+                      [017, 042] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [017, 043] (0000,         ID) {j}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [017, 044] (0016, FE_COLCHET) {]}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                      [017, 045] (0004, FE_PARENTE) {)}
+                      [017, 047] (0005,   AB_CHAVE) {{}
+          18  vet [j + gap] = vet[j];
+                  Bloco = 'id' BlocoAux
+                      [018, 019] (0000,         ID) {vet}
+                  BlocoAux = 'ab_colchet' ExpArit 'fe_colchet' Atribuicao Bloco
+                      [018, 023] (0015, AB_COLCHET) {[}
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [018, 024] (0000,         ID) {j}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [018, 026] (0023,     OPA_AD) {+}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [018, 028] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                      [018, 031] (0016, FE_COLCHET) {]}
+                  Atribuicao = 'atribuicao' ExpConcat 'pont_virg'
+                      [018, 033] (0008, ATRIBUICAO) {=}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [018, 035] (0000,         ID) {vet}
+                  CFuncAux = 'ab_colchet' ExpConcat 'fe_colchet'
+                      [018, 038] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [018, 039] (0000,         ID) {j}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [018, 040] (0016, FE_COLCHET) {]}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [018, 041] (0001,  PONT_VIRG) {;}
+          19  j = j - gap;
+                  Bloco = 'id' BlocoAux
+                      [019, 019] (0000,         ID) {j}
+                  BlocoAux = Atribuicao Bloco
+                  Atribuicao = 'atribuicao' ExpConcat 'pont_virg'
+                      [019, 021] (0008, ATRIBUICAO) {=}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [019, 023] (0000,         ID) {j}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [019, 025] (0023,     OPA_AD) {-}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [019, 027] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [019, 030] (0001,  PONT_VIRG) {;}
+          20  }
+                  Bloco = epsilon
+                      [020, 015] (0006,   FE_CHAVE) {}}
+          21  vet [j + gap] = value;
+                  Bloco = 'id' BlocoAux
+                      [021, 015] (0000,         ID) {vet}
+                  BlocoAux = 'ab_colchet' ExpArit 'fe_colchet' Atribuicao Bloco
+                      [021, 019] (0015, AB_COLCHET) {[}
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [021, 020] (0000,         ID) {j}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [021, 022] (0023,     OPA_AD) {+}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [021, 024] (0000,         ID) {gap}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                      [021, 027] (0016, FE_COLCHET) {]}
+                  Atribuicao = 'atribuicao' ExpConcat 'pont_virg'
+                      [021, 029] (0008, ATRIBUICAO) {=}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [021, 031] (0000,         ID) {value}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [021, 036] (0001,  PONT_VIRG) {;}
+          22  }
+                  Bloco = epsilon
+                      [022, 011] (0006,   FE_CHAVE) {}}
+          23  }
+                  Bloco = epsilon
+                      [023, 007] (0006,   FE_CHAVE) {}}
+          24  }
+                  Bloco = epsilon
+                      [024, 003] (0006,   FE_CHAVE) {}}
+          26  void main() {
+                  CodAux = Funcao CodAux
+                  Funcao = 'tipo_void' 'id' 'ab_parente' LParam 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [026, 003] (0021,  TIPO_VOID) {void}
+                      [026, 008] (0000,         ID) {main}
+                      [026, 012] (0003, AB_PARENTE) {(}
+                  LParam = epsilon
+                      [026, 013] (0004, FE_PARENTE) {)}
+                      [026, 015] (0005,   AB_CHAVE) {{}
+          27  int size;
+                  Bloco = Declaracao Bloco
+                  Declaracao = Tipo 'id' DeclFim
+                  Tipo = 'tipo_int'
+                      [027, 005] (0017,   TIPO_INT) {int}
+                      [027, 009] (0000,         ID) {size}
+                  DeclFim = 'pont_virg'
+                      [027, 013] (0001,  PONT_VIRG) {;}
+          28  int i;
+                  Bloco = Declaracao Bloco
+                  Declaracao = Tipo 'id' DeclFim
+                  Tipo = 'tipo_int'
+                      [028, 005] (0017,   TIPO_INT) {int}
+                      [028, 009] (0000,         ID) {i}
+                  DeclFim = 'pont_virg'
+                      [028, 010] (0001,  PONT_VIRG) {;}
+          30  read("%i", size);
+                  Bloco = Read Bloco
+                  Read = 'read' 'ab_parente' 'cte_cad_ch' LId 'fe_parente' 'pont_virg'
+                      [030, 005] (0034,       READ) {read}
+                      [030, 009] (0003, AB_PARENTE) {(}
+                      [030, 010] (0009, CTE_CAD_CH) {%i}
+                  LId = 'virgula' 'id' LIdAux
+                      [030, 014] (0002,    VIRGULA) {,}
+                      [030, 016] (0000,         ID) {size}
+                  LIdAux = LId
+                  LId = epsilon
+                      [030, 020] (0004, FE_PARENTE) {)}
+                      [030, 021] (0001,  PONT_VIRG) {;}
+          32  int vet[size];
+                  Bloco = Declaracao Bloco
+                  Declaracao = Tipo 'id' DeclFim
+                  Tipo = 'tipo_int'
+                      [032, 005] (0017,   TIPO_INT) {int}
+                      [032, 009] (0000,         ID) {vet}
+                  DeclFim = 'ab_colchet' ExpConcat 'fe_colchet' 'pont_virg'
+                      [032, 012] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [032, 013] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [032, 017] (0016, FE_COLCHET) {]}
+                      [032, 018] (0001,  PONT_VIRG) {;}
+          34  for i in (size) {
+                  Bloco = For Bloco
+                  For = 'for' 'id' 'in' 'ab_parente' Range 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [034, 005] (0032,        FOR) {for}
+                      [034, 009] (0000,         ID) {i}
+                      [034, 011] (0031,         IN) {in}
+                      [034, 014] (0003, AB_PARENTE) {(}
+                  Range = ExpArit RangeAux
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [034, 015] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  RangeAux = epsilon
+                      [034, 019] (0004, FE_PARENTE) {)}
+                      [034, 021] (0005,   AB_CHAVE) {{}
+          35  read("%i", vet[i]);
+                  Bloco = Read Bloco
+                  Read = 'read' 'ab_parente' 'cte_cad_ch' LId 'fe_parente' 'pont_virg'
+                      [035, 007] (0034,       READ) {read}
+                      [035, 011] (0003, AB_PARENTE) {(}
+                      [035, 012] (0009, CTE_CAD_CH) {%i}
+                  LId = 'virgula' 'id' LIdAux
+                      [035, 016] (0002,    VIRGULA) {,}
+                      [035, 018] (0000,         ID) {vet}
+                  LIdAux = 'ab_colchet' ExpConcat 'fe_colchet' LId
+                      [035, 021] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [035, 022] (0000,         ID) {i}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [035, 023] (0016, FE_COLCHET) {]}
+                  LId = epsilon
+                      [035, 024] (0004, FE_PARENTE) {)}
+                      [035, 025] (0001,  PONT_VIRG) {;}
+          36  }
+                  Bloco = epsilon
+                      [036, 005] (0006,   FE_CHAVE) {}}
+          38  for i in (size - 1) {
+                  Bloco = For Bloco
+                  For = 'for' 'id' 'in' 'ab_parente' Range 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [038, 005] (0032,        FOR) {for}
+                      [038, 009] (0000,         ID) {i}
+                      [038, 011] (0031,         IN) {in}
+                      [038, 014] (0003, AB_PARENTE) {(}
+                  Range = ExpArit RangeAux
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [038, 015] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [038, 020] (0023,     OPA_AD) {-}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [038, 022] (0012,    CTE_INT) {1}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  RangeAux = epsilon
+                      [038, 023] (0004, FE_PARENTE) {)}
+                      [038, 025] (0005,   AB_CHAVE) {{}
+          39  print("%i, ", vet[i]);
+                  Bloco = Print Bloco
+                  Print = 'print' 'ab_parente' 'cte_cad_ch' PrintAux 'fe_parente' 'pont_virg'
+                      [039, 007] (0035,      PRINT) {print}
+                      [039, 012] (0003, AB_PARENTE) {(}
+                      [039, 013] (0009, CTE_CAD_CH) {%i, }
+                  PrintAux = 'virgula' LArgs
+                      [039, 019] (0002,    VIRGULA) {,}
+                  LArgs = ExpConcat LArgsAux
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [039, 021] (0000,         ID) {vet}
+                  CFuncAux = 'ab_colchet' ExpConcat 'fe_colchet'
+                      [039, 024] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [039, 025] (0000,         ID) {i}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [039, 026] (0016, FE_COLCHET) {]}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                  LArgsAux = epsilon
+                      [039, 027] (0004, FE_PARENTE) {)}
+                      [039, 028] (0001,  PONT_VIRG) {;}
+          40  }
+                  Bloco = epsilon
+                      [040, 005] (0006,   FE_CHAVE) {}}
+          41  print("%i\n", vet[size-1]);
+                  Bloco = Print Bloco
+                  Print = 'print' 'ab_parente' 'cte_cad_ch' PrintAux 'fe_parente' 'pont_virg'
+                      [041, 005] (0035,      PRINT) {print}
+                      [041, 010] (0003, AB_PARENTE) {(}
+                      [041, 011] (0009, CTE_CAD_CH) {%i\n}
+                  PrintAux = 'virgula' LArgs
+                      [041, 017] (0002,    VIRGULA) {,}
+                  LArgs = ExpConcat LArgsAux
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [041, 019] (0000,         ID) {vet}
+                  CFuncAux = 'ab_colchet' ExpConcat 'fe_colchet'
+                      [041, 022] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [041, 023] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [041, 027] (0023,     OPA_AD) {-}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [041, 028] (0012,    CTE_INT) {1}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [041, 029] (0016, FE_COLCHET) {]}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                  LArgsAux = epsilon
+                      [041, 030] (0004, FE_PARENTE) {)}
+                      [041, 031] (0001,  PONT_VIRG) {;}
+          43  shellSort(vet, size);
+                  Bloco = 'id' BlocoAux
+                      [043, 005] (0000,         ID) {shellSort}
+                  BlocoAux = CompletaFc 'pont_virg' Bloco
+                  CompletaFc = 'ab_parente' LArgs 'fe_parente'
+                      [043, 014] (0003, AB_PARENTE) {(}
+                  LArgs = ExpConcat LArgsAux
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [043, 015] (0000,         ID) {vet}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                  LArgsAux = 'virgula' ExpConcat LArgsAux
+                      [043, 018] (0002,    VIRGULA) {,}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [043, 020] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                  LArgsAux = epsilon
+                      [043, 024] (0004, FE_PARENTE) {)}
+                      [043, 025] (0001,  PONT_VIRG) {;}
+          45  for i in (size - 1) {
+                  Bloco = For Bloco
+                  For = 'for' 'id' 'in' 'ab_parente' Range 'fe_parente' 'ab_chave' Bloco 'fe_chave'
+                      [045, 005] (0032,        FOR) {for}
+                      [045, 009] (0000,         ID) {i}
+                      [045, 011] (0031,         IN) {in}
+                      [045, 014] (0003, AB_PARENTE) {(}
+                  Range = ExpArit RangeAux
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [045, 015] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [045, 020] (0023,     OPA_AD) {-}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [045, 022] (0012,    CTE_INT) {1}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  RangeAux = epsilon
+                      [045, 023] (0004, FE_PARENTE) {)}
+                      [045, 025] (0005,   AB_CHAVE) {{}
+          46  print("%i, ", vet[i]);
+                  Bloco = Print Bloco
+                  Print = 'print' 'ab_parente' 'cte_cad_ch' PrintAux 'fe_parente' 'pont_virg'
+                      [046, 007] (0035,      PRINT) {print}
+                      [046, 012] (0003, AB_PARENTE) {(}
+                      [046, 013] (0009, CTE_CAD_CH) {%i, }
+                  PrintAux = 'virgula' LArgs
+                      [046, 019] (0002,    VIRGULA) {,}
+                  LArgs = ExpConcat LArgsAux
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [046, 021] (0000,         ID) {vet}
+                  CFuncAux = 'ab_colchet' ExpConcat 'fe_colchet'
+                      [046, 024] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [046, 025] (0000,         ID) {i}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [046, 026] (0016, FE_COLCHET) {]}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                  LArgsAux = epsilon
+                      [046, 027] (0004, FE_PARENTE) {)}
+                      [046, 028] (0001,  PONT_VIRG) {;}
+          47  }
+                  Bloco = epsilon
+                      [047, 005] (0006,   FE_CHAVE) {}}
+          48  print("%i\n", vet[size-1]);
+                  Bloco = Print Bloco
+                  Print = 'print' 'ab_parente' 'cte_cad_ch' PrintAux 'fe_parente' 'pont_virg'
+                      [048, 005] (0035,      PRINT) {print}
+                      [048, 010] (0003, AB_PARENTE) {(}
+                      [048, 011] (0009, CTE_CAD_CH) {%i\n}
+                  PrintAux = 'virgula' LArgs
+                      [048, 017] (0002,    VIRGULA) {,}
+                  LArgs = ExpConcat LArgsAux
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [048, 019] (0000,         ID) {vet}
+                  CFuncAux = 'ab_colchet' ExpConcat 'fe_colchet'
+                      [048, 022] (0015, AB_COLCHET) {[}
+                  ExpConcat = ExpBool TermConcat
+                  ExpBool = TermBool FatBool
+                  TermBool = ExpRel TermBoRes
+                  ExpRel = ExpArit TermRel
+                  ExpArit = TermArit FatArit
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'id' CFuncAux
+                      [048, 023] (0000,         ID) {size}
+                  CFuncAux = epsilon
+                  TermAriRes = epsilon
+                  FatArit = 'opa_ad' TermArit FatArit
+                      [048, 027] (0023,     OPA_AD) {-}
+                  TermArit = FatAritRes TermAriRes
+                  FatAritRes = 'cte_int'
+                      [048, 028] (0012,    CTE_INT) {1}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                      [048, 029] (0016, FE_COLCHET) {]}
+                  TermAriRes = epsilon
+                  FatArit = epsilon
+                  TermRel = epsilon
+                  TermBoRes = epsilon
+                  FatBool = epsilon
+                  TermConcat = epsilon
+                  LArgsAux = epsilon
+                      [048, 030] (0004, FE_PARENTE) {)}
+                      [048, 031] (0001,  PONT_VIRG) {;}
+          49  }
+                  Bloco = epsilon
+                      [049, 003] (0006,   FE_CHAVE) {}}
+
+        Sintaxe correta! Análise encerrada!	
