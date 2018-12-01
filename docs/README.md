@@ -1,3 +1,3 @@
-# Linguagem de programação GimmeDaddy
+# GimmeDaddy programing language
 
-Especificação e implementação (em Java) dos analisadores léxico e sintático da linguagem.
+Specification and implementation (in Java) of the lexical and syntactic parsers of the GimmeDaddy language.
